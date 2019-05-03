@@ -1,0 +1,36 @@
+.exercises {
+  padding: 70px 0 50px;
+  color: #000;
+  background-color: #dbdcf2;
+}
+
+.site-title {
+  margin: 0 auto 40px;
+  max-width: 700px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.exercises-list {
+  display: flex;
+  justify-content: space-between;
+  li {
+    width: 100%;
+    max-width: 300px;
+  }
+  img {
+    width: 100%;
+  }
+  h3 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    position: relative;
+    &:before {
+      content: '\\';
+      position: absolute;
+      left: 10px;
+    }
+  }
+}

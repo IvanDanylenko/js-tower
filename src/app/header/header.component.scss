@@ -1,0 +1,48 @@
+a {
+  color: #fff;
+  &:hover {
+    color: #fff;
+  }
+}
+
+.header {
+  padding: 10px 0;
+  font-size: 18px;
+  background-image: linear-gradient(to top, #11191a 0%, #1a02b8 100%);
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: block;
+  img {
+    height: 40px;
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  li {
+    margin-right: 70px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.cabinet {
+  a {
+    display: flex;
+    align-items: center;
+  }
+  .photo {
+    margin-right: 12px;
+    width: 35px;
+    height: 35px;
+  }
+}
