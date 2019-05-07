@@ -1,66 +1,85 @@
-.exercises {
-  padding: 70px 0 50px;
-  color: #000;
-  background-color: #dbdcf2;
+$text-color: #1A1A1A;
+
+a {
+	color: #0031CC;
+	font-weight: 500;
 }
 
-.site-title {
-  margin: 0 auto 40px;
-  max-width: 700px;
-  text-align: center;
-  font-weight: 400;
-  font-size: 25px;
+h2 {
+	color: #0F687E;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 24px;
 }
 
-.exercises-list {
-  display: flex;
-  justify-content: space-between;
-  li {
-    width: 100%;
-    max-width: 296px;
-    background: #fff;
-    overflow: hidden;
-  }
-  .img-wrap {
-    display: flex;
-    align-items: flex-start;
-    img {
-      width: 100%;
-    }
-  }
-  h3 {
-    padding: 10px 0;
-    text-align: center;
-    font-size: 25px;
-    font-weight: 400;
-    position: relative;
-    &:before {
-      content: '\\';
-      color: #f8bf25;
-      font-size: 32px;
-      position: absolute;
-      left: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  }
-  .progress {
-    padding: 10px 0;
-    font-size: 21px;
-    text-align: center;
-    color: #fff;
-    background-image: linear-gradient(to top, #171c1d 0%, #1a02b8 100%);
-  }
-  .progress__container {
-    margin: 5px auto 0;
-    width: 95%;
-    height: 7px;
-    background: #9e9e9e;
-    border-radius: 5px;
-    overflow: hidden;
-  }
-  .progress__bar {
-    height: 100%;
-    background: #f8bf25;
-  }
+.main-screen {
+	padding: 70px 0;
+	background: #0031CC;
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.offer {
+	width: 50%;
+	color: #fff;
+}
+
+.offer__text {
+	margin-bottom: 5px;
+	font-size: 22px;
+}
+
+.offer__title {
+	font-size: 30px;
+}
+
+.reasons {
+	padding: 60px 0;
+	h2 {
+		margin-bottom: 25px;
+	}
+}
+
+.reasons-text {
+	padding: 5px 20px 5px 30px;
+	margin: 0 auto;
+	width: 90%;
+	font-size: 20px;
+	color: $text-color;
+	border-left: 2px solid #0F687E;
+	border-radius: 4px;
+	P:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.help {
+	padding-bottom: 60px;
+	h2 {
+		margin-bottom: 30px;
+	}
+}
+
+.help-list {
+	padding: 30px 45px;
+	background: #FFF3A5;
+	li {
+		padding-left: 50px;
+		margin-bottom: 25px;
+		position: relative;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		&:before {
+			content: url("/assets/img/checkmark.svg");
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			margin-top: -12px;
+		}
+	}
 }

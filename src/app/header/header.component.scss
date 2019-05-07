@@ -8,7 +8,7 @@ a {
 .header {
   padding: 10px 0;
   font-size: 18px;
-  background-image: linear-gradient(to top, #11191a 0%, #1a02b8 100%);
+  background-image: linear-gradient(180deg, #1A02B8 0%, #15009D 100%);
 }
 
 .navigation {
@@ -28,7 +28,7 @@ a {
   display: flex;
   justify-content: space-between;
   li {
-    margin-right: 70px;
+    margin-right: 150px;
     &:last-child {
       margin-right: 0;
     }
