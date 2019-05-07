@@ -1,26 +1,10 @@
-$red: #750000;
-
 .exercise {
 	background-color: #dbdcf2;
+	height: 100vh;
+	display: flex;
+	justify-content: space-between;
 }
 
-.description {
-	p {
-		margin-bottom: 15px;
-		font-size: 13px;
-		i {
-			color: $red;
-			font-style: normal;
-		}
-	}
-	.gray-block {
-		padding: 5px 20px;
-		background-color: #9f9e9e;
-		p {
-			margin-bottom: 5px;;
-			&:last-child {
-				margin-bottom: 0;
-			}
-		}
-	}
+.sidebar-wrapper {
+	width: 60px;
 }

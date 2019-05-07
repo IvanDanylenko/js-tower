@@ -8,6 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { Ex1Component } from './exercises/ex1/ex1.component';
 import { ExercisesAllComponent } from './exercises/exercises-all/exercises-all.component';
 import { FooterComponent } from './footer/footer.component';
+import { SidebarComponent } from './exercises/sidebar/sidebar.component';
+import { TaskComponent } from './exercises/ex1/task/task.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     Ex1Component,
     ExercisesAllComponent,
-    FooterComponent
+    FooterComponent,
+    SidebarComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,

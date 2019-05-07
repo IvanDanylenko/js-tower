@@ -1,0 +1,20 @@
+.description {
+	p {
+		margin-bottom: 15px;
+		font-size: 13px;
+		i {
+			color: #750000;
+			font-style: normal;
+		}
+	}
+	.gray-block {
+		padding: 5px 20px;
+		background-color: #9f9e9e;
+		p {
+			margin-bottom: 5px;;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
