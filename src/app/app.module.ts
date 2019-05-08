@@ -10,6 +10,7 @@ import { ExercisesAllComponent } from './exercises/exercises-all/exercises-all.c
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './exercises/sidebar/sidebar.component';
 import { TaskComponent } from './exercises/ex1/task/task.component';
+import { ExercisesListComponent } from './exercises/exercises-list/exercises-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TaskComponent } from './exercises/ex1/task/task.component';
     ExercisesAllComponent,
     FooterComponent,
     SidebarComponent,
-    TaskComponent
+    TaskComponent,
+    ExercisesListComponent
   ],
   imports: [
     BrowserModule,
