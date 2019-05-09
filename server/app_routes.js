@@ -5,7 +5,7 @@ modeule.exports = function(app, db){
 		db.collection('users').findOne(user, (err, item)=>{
 			if(err){
 				res.send({'error': 'An error has occured'});
-			} else{
+			} else {
 				res.send(item);
 			}
 		});
@@ -16,7 +16,7 @@ modeule.exports = function(app, db){
 		db.collection('users').insert(user, (err, result)=>{
 			if(err){
 				res.send({'error': 'An error has occured'});
-			} else{
+			} else {
 				res.send(result.ops[0]);
 			}
 		});
