@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+	constructor(private formBuilder: FormBuilder) { }
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
 
+	// login form with FormBuilder
+	loginForm = this.formBuilder.group({
+		login: [''],
+		password: ['']
+	});
+
+	onSubmit():void {
+		console.log(this.loginForm.value);
+	}
 }
