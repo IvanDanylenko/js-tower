@@ -4,6 +4,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AlertService, AuthenticationService, UserService} from '../_services';
 import {Router} from '@angular/router';
 import {first} from 'rxjs/operators';
+import {User} from '../models';
 
 @Component({
   selector: 'app-register',
@@ -47,7 +48,10 @@ export class RegisterComponent implements OnInit {
 
 		this.loading = true;
 		console.log('Ok');
-		this.userService.register(this.registerForm.value)
+		const user = new User();
+		user.login = this.f.login.value;
+		user.password = this.f.password.value;
+		this.userService.register(user)
 			.pipe(first())
 			.subscribe(
 				data => {
