@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { Ex1Component } from './exercises/ex1/ex1.component';
-import { ExercisesAllComponent } from './exercises/exercises-all/exercises-all.component';
-import { ExercisesListComponent } from './exercises/exercises-list/exercises-list.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home';
+import { Ex1Component, ExercisesAllComponent, ExercisesListComponent } from './exercises';
+import { LoginComponent } from './login';
+import { RegisterComponent } from './register';
+import { AuthGuard } from './_guards';
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent },
@@ -16,9 +15,10 @@ const routes: Routes = [
 		component: ExercisesAllComponent,
 		children: [
 			{ path: '', component: ExercisesListComponent },
-			{ path: 'ex1', component: Ex1Component }
+			{ path: 'ex1', component: Ex1Component, canActivate: [AuthGuard] }
 		]
-	}
+	},
+	{path: '**', redirectTo: '' }
 ];
 
 @NgModule({
