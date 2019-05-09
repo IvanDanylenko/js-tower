@@ -3,23 +3,25 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import { fakeBackendProvider } from './helpers/fake-backend';
-import { JwtInterceptor } from './helpers/jwt.interseptor';
-import { ErrorInterceptor } from './helpers/error.interseptor';
+/*fake-backend*/
+import { fakeBackendProvider } from './helpers';
+
+import { JwtInterceptor, ErrorInterceptor } from './helpers';
 
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { ExercisesAllComponent } from './exercises/exercises-all/exercises-all.component';
-import { ExercisesListComponent } from './exercises/exercises-list/exercises-list.component';
-import { Ex1Component } from './exercises/ex1/ex1.component';
-import { SidebarComponent } from './exercises/sidebar/sidebar.component';
-import { TaskComponent } from './exercises/ex1/task/task.component';
+import { HomeComponent } from './home';
+import { HeaderComponent } from './header';
+import { FooterComponent } from './footer';
+import { LoginComponent } from './login';
+import { RegisterComponent } from './register';
+
+import { ExercisesAllComponent, ExercisesListComponent, Ex1Component } from './exercises';
+
+import { SidebarComponent } from './exercises/sidebar';
+import { TaskComponent } from './exercises/ex1/task';
+import { AlertComponent } from './_shared/alert.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { TaskComponent } from './exercises/ex1/task/task.component';
     TaskComponent,
     ExercisesListComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
