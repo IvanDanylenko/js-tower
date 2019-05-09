@@ -1,52 +1,45 @@
 <section id="exercises" class="exercises">
 	<div class="container">
-		<h1 class="site-title">Картинки заменить на градиенты, сделать кнопку вопроса, по которой вызовется модальное окно с описанием упражнения</h1>
+		<h1 class="exercises-title">Упражнения для изучения JavaScript</h1>
+		<!-- exercises-list -->
 		<ul class="exercises-list">
       <!-- ex1 -->
-			<li>
-        <a routerLink="/exercises/ex1">
-          <div class="img-wrap">
-            <img src="assets/img/ex1.jpg" alt="Тренировка кода">
-          </div>
-          <h3>Тренировка кода</h3>
-          <div class="progress">
-            <span>40%</span>
-            <div class="progress__container">
-              <div style="width: 40%" class="progress__bar"></div>
-            </div>
-          </div>
+			<li class="purple">
+        <a routerLink="/exercises/ex1" class="icon-comet">
+					<div class="exercises-list__content">
+						<h2>Тренировка кода</h2>
+						<p>Упражнение рассчитаное на освоение конструкций языка в практическом применении</p>
+					</div>
+					<div class="progress">
+						<span>Прогресс 11/100</span>
+					</div>
         </a>
       </li>
       <!-- ex2 -->
-      <li>
-        <a href="#">
-          <div class="img-wrap">
-            <img src="assets/img/ex2.jpg" alt="Тренировка кода">
-          </div>
-          <h3>Ответь на вопрос</h3>
-          <div class="progress">
-            <span>40%</span>
-            <div class="progress__container">
-              <div style="width: 40%" class="progress__bar"></div>
-            </div>
-          </div>
+      <li class="blue">
+        <a href="#" class="icon-clever">
+          <div class="exercises-list__content">
+						<h2>Определи результат</h2>
+						<p>Докажи, что можешь понять как работает любой код, каким бы хитрым он ни был</p>
+					</div>
+					<div class="progress">
+						<span>Прогресс 11/100</span>
+					</div>
         </a>
       </li>
       <!-- ex3 -->
-      <li>
-        <a href="#">
-          <div class="img-wrap">
-            <img src="assets/img/ex3.jpg" alt="Тренировка кода">
-          </div>
-          <h3>Определи результат</h3>
-          <div class="progress">
-            <span>40%</span>
-            <div class="progress__container">
-              <div style="width: 40%" class="progress__bar"></div>
-            </div>
-          </div>
+      <li class="purple-light">
+        <a href="#" class="icon-around-the-world">
+          <div class="exercises-list__content">
+						<h2>Ответь на вопрос</h2>
+						<p>Проверь свои теоретические знания, ответив на все поставленные вопросы</p>
+					</div>
+					<div class="progress">
+						<span>Прогресс 11/100</span>
+					</div>
         </a>
       </li>
 		</ul>
 	</div>
 </section>
+<app-footer></app-footer>
