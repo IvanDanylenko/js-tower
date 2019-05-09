@@ -8,10 +8,6 @@ body {
 	line-height: 1;
 }
 
-section {
-	padding: 60px 0;
-}
-
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
@@ -28,6 +24,7 @@ p {
 }
 
 a, a:hover {
+	cursor: pointer;
   text-decoration: none;
 }
 

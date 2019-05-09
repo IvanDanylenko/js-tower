@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
+import { AuthenticationService } from '../_services/authentication.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,7 +10,10 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-	constructor(private formBuilder: FormBuilder) { }
+	constructor(
+		private formBuilder: FormBuilder,
+		private auth: AuthenticationService
+	) { }
 
 	ngOnInit() {
 	}
@@ -20,6 +25,8 @@ export class LoginComponent implements OnInit {
 	});
 
 	onSubmit():void {
-		console.log(this.loginForm.value);
+		// console.log(this.loginForm.value);
+		/* test authentication service */
+		this.auth.getGithubUser();
 	}
 }
