@@ -25,8 +25,6 @@ export class LoginComponent implements OnInit {
 	});
 
 	onSubmit():void {
-		// console.log(this.loginForm.value);
-		/* test authentication service */
-		this.auth.getGithubUser();
+		
 	}
 }

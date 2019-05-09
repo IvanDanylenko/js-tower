@@ -20,6 +20,7 @@ import { ExercisesListComponent } from './exercises/exercises-list/exercises-lis
 import { Ex1Component } from './exercises/ex1/ex1.component';
 import { SidebarComponent } from './exercises/sidebar/sidebar.component';
 import { TaskComponent } from './exercises/ex1/task/task.component';
+import { EditorComponent } from './exercises/ex1/editor/editor.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { TaskComponent } from './exercises/ex1/task/task.component';
     TaskComponent,
     ExercisesListComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,
