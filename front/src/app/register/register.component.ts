@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
-import { AuthenticationService } from '../_services/authentication.service';
+import { AuthenticationService } from '../_services';
 
 @Component({
   selector: 'app-register',
@@ -9,23 +9,33 @@ import { AuthenticationService } from '../_services/authentication.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+	registerForm: FormGroup;
+	loading = false;
+	submitted = false;
 
   constructor(
 		private formBuilder: FormBuilder,
-		private auth: AuthenticationService
+		private authService: AuthenticationService
 	) { }
 
   ngOnInit() {
+		// register form with FormBuilder
+		this.registerForm = this.formBuilder.group({
+			login: ['', Validators.required],
+			password: ['', Validators.required],
+			passwordRepeat: ['', Validators.required]
+		});
 	}
-	
-	// register form with FormBuilder
-	registerForm = this.formBuilder.group({
-		"login": [''],
-		"password": [''],
-		"passwordRepeat": ['']
-	});
 
-	onSubmit():void {
+	get f() { return this.registerForm.controls; }
+
+	onSubmit() {
+  	this.submitted = true;
+		if (this.registerForm.invalid) {
+			return;
+		}
+
+		this.loading = true;
 		console.log('Ok');
 	}
 }
