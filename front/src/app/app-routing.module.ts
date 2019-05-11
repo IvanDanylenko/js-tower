@@ -5,11 +5,13 @@ import { Ex1Component, ExercisesAllComponent, ExercisesListComponent } from './e
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { AuthGuard } from './_guards';
+import { CabinetComponent } from './cabinet/cabinet.component';
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent },
 	{ path: 'login', component: LoginComponent },
 	{ path: 'register', component: RegisterComponent },
+	{ path: 'cabinet', component: CabinetComponent },
 	{ 
 		path: 'exercises',
 		component: ExercisesAllComponent,

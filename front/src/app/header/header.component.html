@@ -6,18 +6,18 @@
 			</a>
 			<nav class="nav-menu">
 				<ul class="menu">
-					<li><a routerLink="/exercises">Упражнения</a></li>
-					<li><a href="#">Дополнительно</a></li>
+					<li><a routerLink="/exercises">Вправи</a></li>
+					<li><a href="#">Додатково</a></li>
 				</ul>
 			</nav>
 			<div class="cabinet">
 				<a href="#" *ngIf="auth">
 					<img src="assets/img/user-replacement.png" alt="User photo" class="photo">
-					<span>Личный кабинет</span>
+					<span>Персональний кабінет</span>
 				</a>
 				<a routerLink="/login" *ngIf="!auth">
 					<img src="assets/img/sign-in.svg" alt="" class="sign-in">
-					<span>Войти</span>
+					<span>Війти</span>
 				</a>
 			</div>
 		</div>
