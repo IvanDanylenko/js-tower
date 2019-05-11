@@ -23,6 +23,7 @@ import { TaskComponent } from './exercises/ex1/task';
 import { SidebarComponent } from './exercises/sidebar';
 
 import { AlertComponent } from './_shared/alert.component';
+import { CabinetComponent } from './cabinet/cabinet.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AlertComponent } from './_shared/alert.component';
     ExercisesListComponent,
     LoginComponent,
     RegisterComponent,
-    AlertComponent
+    AlertComponent,
+    CabinetComponent
   ],
   imports: [
     BrowserModule,
