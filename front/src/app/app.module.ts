@@ -18,9 +18,10 @@ import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 
 import { ExercisesAllComponent, ExercisesListComponent, Ex1Component } from './exercises';
-
-import { SidebarComponent } from './exercises/sidebar';
+import { EditorComponent } from './exercises/ex1/editor';
 import { TaskComponent } from './exercises/ex1/task';
+import { SidebarComponent } from './exercises/sidebar';
+
 import { AlertComponent } from './_shared/alert.component';
 
 @NgModule({
@@ -29,10 +30,11 @@ import { AlertComponent } from './_shared/alert.component';
     HomeComponent,
     HeaderComponent,
     Ex1Component,
+		TaskComponent,
+		EditorComponent,
     ExercisesAllComponent,
     FooterComponent,
     SidebarComponent,
-    TaskComponent,
     ExercisesListComponent,
     LoginComponent,
     RegisterComponent,
