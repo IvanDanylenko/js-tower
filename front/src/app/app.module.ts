@@ -23,7 +23,7 @@ import { TaskComponent } from './exercises/ex1/task';
 import { SidebarComponent } from './exercises/sidebar';
 
 import { AlertComponent } from './_shared/alert.component';
-import { CabinetComponent } from './cabinet/cabinet.component';
+import { CabinetComponent } from './cabinet';
 
 @NgModule({
   declarations: [

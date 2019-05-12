@@ -55,7 +55,13 @@
       "as-needed"
     ],
     "object-literal-sort-keys": false,
-    "ordered-imports": false,
+		"ordered-imports": [
+      false,
+      {
+        "grouped-imports": false,
+        "path-alias-roots": ["$@src/", "$@typings/"]
+      }
+    ],
     "quotemark": [
       true,
       "single"

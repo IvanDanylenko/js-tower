@@ -5,6 +5,7 @@
 		"title": "Вправа 1",
 		"description": "<p>In JavaScript, you can store a value in a variable with theassignment operator.</p><p><i>myVariable=5;</i></p><p>This assigns the <i>Number</i> value <i>5</i> to <i>myVariable.</i></p><p>Assignment always goes from right to left. Everything to the rightof the=operator is resolved before the value is assigned to thevariable to the left of the operator.</p><div><p><i>myVar=5;</i></p><p><i>myNum=myVar;</i></p></div><p>This assigns <i>5</i> to <i>myVar</i> and then resolves<i>myVar</i> to <i>5</i> again and assigns it to <i>myNum</i>.</p>",
 		"tasks": ["Повинен бути коментар //Simple comment", "Змінна повинна містити число 1012"],
-		"tests": ["//Simple comment", "/*Multiline comment*/", 1012]
+		"tests": ["//Simple comment", "/*Multiline comment*/", 1012],
+		"codeEditor": "function test () { }"
 	}
 ]
