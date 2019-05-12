@@ -1,0 +1,71 @@
+.exercises {
+  padding: 70px 0 50px;
+	// background-color: #dbdcf2;
+}
+
+.exercises-title {
+	margin-bottom: 40px;
+	font-size: 24px;
+	color: #0F687E;
+	text-align: center;
+}
+
+.exercises-list {
+  display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	height: 100vh;
+  li {
+    width: 100%;
+		max-width: 370px;
+		border-radius: 15px;
+	}
+	.purple {
+		background: linear-gradient(165.53deg, #7913C9 8.72%, #7316BC 92.35%);
+	}
+	.purple-light {
+		background: linear-gradient(165.53deg, #5419E3 8.72%, #5013E6 92.35%);
+	}
+	.blue {
+		background: linear-gradient(165.53deg, #0031CC 8.72%, #0035DD 92.35%);
+	}
+  a {
+		padding: 25px 0 15px;
+		display: block;
+		color: #fff;
+		background-repeat: no-repeat;
+		background-position: 30px center;
+		&:hover {
+			color: #fff;
+		}
+	}
+	.icon-comet {
+		background-image: url("/assets/img/comet.png");
+	}
+	.icon-clever {
+		background-image: url("/assets/img/clever.png");
+	}
+	.icon-around-the-world {
+		background-image: url("/assets/img/around-the-world.png");
+	}
+	.exercises-list__content {
+		padding: 0 35px 0 140px;
+		margin-bottom: 10px;
+	}
+	h2 {
+		margin-bottom: 10px;
+		font-size: 20px;
+		white-space: nowrap;
+	}
+	p {
+		margin-bottom: 0;
+		font-size: 14px;
+		line-height: 1.3em;
+	}
+	.progress {
+		padding-top: 15px;
+		text-align: center;
+		font-weight: 700;
+		font-size: 14px;
+	}
+}

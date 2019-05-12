@@ -1,0 +1,24 @@
+.description {
+	padding: 20px;
+	height: 100%;
+	background: #eee;
+	overflow: auto;
+	p {
+		margin-bottom: 15px;
+		font-size: 16px;
+		i {
+			color: #750000;
+			font-style: normal;
+		}
+	}
+	div {
+		padding: 5px 20px;
+		background-color: #9f9e9e;
+		p {
+			margin-bottom: 5px;;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
