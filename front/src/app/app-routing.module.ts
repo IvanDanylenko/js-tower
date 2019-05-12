@@ -5,7 +5,7 @@ import { Ex1Component, ExercisesAllComponent, ExercisesListComponent } from './e
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { AuthGuard } from './_guards';
-import { CabinetComponent } from './cabinet/cabinet.component';
+import { CabinetComponent } from './cabinet';
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent },
