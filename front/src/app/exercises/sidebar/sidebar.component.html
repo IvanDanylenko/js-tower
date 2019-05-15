@@ -15,60 +15,13 @@
 		<a (click)="show = false" class="close">&times;</a>
 	</div>
 	<div class="tasks-modal__content">
-		<div class="tasks-modal__volume">
-			<h5>Основи JavaScript</h5>
+		<div *ngFor="let level of taskList" class="tasks-modal__volume">
+			<h5>{{level.name}}</h5>
 			<ul>
-				<li>
-					<a href="#">
-						<i>1</i>
-						<strong>Коментарі</strong>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<i>2</i>
-						<strong>Змінні</strong>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<i>3</i>
-						<strong>Завдання 3</strong>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<i>4</i>
-						<strong>Завдання 4</strong>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div class="tasks-modal__volume">
-			<h5>Функції</h5>
-			<ul>
-				<li>
-					<a href="#">
-						<i>5</i>
-						<strong>Завдання 5</strong>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<i>6</i>
-						<strong>Завдання 6</strong>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<i>7</i>
-						<strong>Завдання 7</strong>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<i>8</i>
-						<strong>Завдання 8</strong>
+				<li *ngFor="let task of level.tasks">
+					<a (click)="onTaskSelect(level.id, task.id)">
+						<i>{{task.id}}</i>
+						<strong>{{task.name}}</strong>
 					</a>
 				</li>
 			</ul>

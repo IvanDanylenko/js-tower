@@ -4,7 +4,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AlertService, AuthenticationService, UserService} from '../_services';
 import {Router} from '@angular/router';
 import {first} from 'rxjs/operators';
-import {User} from '../models';
+import {LoginModel, UserModel} from '../models';
 
 @Component({
   selector: 'app-register',
@@ -41,18 +41,14 @@ export class RegisterComponent implements OnInit {
 	get f() { return this.registerForm.controls; }
 
 	onSubmit() {
-  	this.submitted = true;
+		this.submitted = true;
 		if (this.registerForm.invalid) {
 			return;
 		}
 
 		this.loading = true;
-		console.log('Ok');
-		const user = new User();
-		user.login = this.f.login.value;
-		user.password = this.f.password.value;
-		this.userService.register(user)
-			.pipe(first())
+		const user = new LoginModel(this.f.login.value, this.f.password.value);
+		this.userService.register(user).pipe(first())
 			.subscribe(
 				data => {
 					this.alertService.success('Registration successful', true);

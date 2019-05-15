@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { first } from 'rxjs/operators';
 
-import { AlertService, AuthenticationService } from '../_services';
-import {first} from 'rxjs/operators';
+import { AlertService, AuthenticationService } from '@/_services';
+import { LoginModel } from '@/models';
 
 @Component({
   selector: 'app-login',
@@ -16,8 +17,11 @@ export class LoginComponent implements OnInit {
 	submitted = false;
 	returnUrl: string;
 
-	constructor(private fb: FormBuilder, private route: ActivatedRoute, private router: Router,
-							private alertService: AlertService, private authService: AuthenticationService) {
+	constructor(private fb: FormBuilder,
+							private route: ActivatedRoute,
+							private router: Router,
+							private alertService: AlertService,
+							private authService: AuthenticationService) {
 		if (this.authService.currentUserValue) {
 			this.router.navigate(['/']);
 		}
@@ -41,7 +45,8 @@ export class LoginComponent implements OnInit {
 		}
 
 		this.loading = true;
-		this.authService.authenticate(this.f.login.value, this.f.password.value).pipe(first()).subscribe(
+		const model = new LoginModel(this.f.login.value, this.f.password.value);
+		this.authService.authenticate(model).pipe(first()).subscribe(
 			data => {
 				this.router.navigate(['/exercises']);
 			},

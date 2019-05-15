@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ComponentFactoryResolver, Input, OnInit, ViewChild} from '@angular/core';
+import {ExerciseModel, CodeEditorModel} from '@/models';
+import {AceDirective} from '@/helpers/ace.directive';
 
 @Component({
   selector: 'app-editor',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./editor.component.scss']
 })
 export class EditorComponent implements OnInit {
+	@Input() editor: CodeEditorModel;
 
-  constructor() { }
+	@ViewChild(AceDirective) aceEditor: AceDirective;
+
+  constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
+		this.loadComponent();
+  	console.log(this.editor);
   }
 
+	loadComponent() {
+
+	}
+
+	onChange() {}
 }

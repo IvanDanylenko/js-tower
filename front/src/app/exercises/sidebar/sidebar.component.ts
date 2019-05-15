@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { TaskService } from '@/_services/task.service';
+
+import {TaskLevelModel,  SelectedTaskModel} from '@/models';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,11 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-	show: boolean = false;
+	show = false;
+	@Input() taskList: TaskLevelModel[];
+	@Output() taskChange: EventEmitter<SelectedTaskModel> = new EventEmitter();
 
-  constructor() { }
+	constructor(private taskSrv: TaskService) {
+	}
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+		this.taskSrv.getTaskList().subscribe(data => {
+			this.taskList = data;
+		});
+	}
 
+	onTaskSelect(levelId: number, taskId: number) {
+		this.taskChange.emit(new SelectedTaskModel(levelId, taskId));
+	}
 }
