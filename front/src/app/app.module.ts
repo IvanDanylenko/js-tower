@@ -24,6 +24,7 @@ import { SidebarComponent } from '@/exercises/sidebar';
 
 import { AlertComponent } from '@/_shared/alert.component';
 import { CabinetComponent } from '@/cabinet';
+import { AceDirective } from '@/helpers/ace.directive';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { CabinetComponent } from '@/cabinet';
     LoginComponent,
     RegisterComponent,
     AlertComponent,
+		AceDirective,
     CabinetComponent
   ],
   imports: [

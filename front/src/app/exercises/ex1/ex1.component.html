@@ -1,13 +1,13 @@
 <section id="ex1" class="exercise">
 	<div class="exercise__content">
 		<div class="column column-left">
-			<app-task [detail]="taskList[0].tasks[0]"></app-task>
+			<app-task [detail]="currentExercise"></app-task>
 		</div>
 		<div class="column column-right">
-			<app-editor></app-editor>
+			<app-editor [editor]="editor"></app-editor>
 		</div>
 	</div>
 	<div class="sidebar-wrapper">
-		<app-sidebar [taskList]="taskList"></app-sidebar>
+		<app-sidebar [taskList]="taskList" (taskChange)="onTaskChange($event)"></app-sidebar>
 	</div>
 </section>

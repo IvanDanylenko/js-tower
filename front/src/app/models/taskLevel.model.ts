@@ -5,3 +5,13 @@ export class TaskLevelModel {
 	name: string;
 	tasks: ExerciseModel[];
 }
+
+export class SelectedTaskModel {
+	levelId: number;
+	taskId: number;
+	constructor(level: number, task: number)
+	{
+		this.levelId = level;
+		this.taskId = task;
+	}
+}

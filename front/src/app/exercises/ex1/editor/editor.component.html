@@ -1,3 +1,4 @@
 <div class="editor-wrapper">
-	<div id="editor"></div>
+	<ace-editor id="editor" (textChanged)="onChange()" [text]="editor.text"></ace-editor>
+	<div id="editor1">{{editor.text}}</div>
 </div>
