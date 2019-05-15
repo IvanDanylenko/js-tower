@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { UserModel } from '@/models';
+import {LoginModel, UserModel} from '@/models';
 import { environment } from '@env/environment';
 
 @Injectable({
@@ -18,7 +18,7 @@ export class UserService {
 		return this.http.get(`${environment.apiUrl}/users/${id}`);
 	}
 
-	register(user: UserModel) {
+	register(user: LoginModel) {
 		return this.http.post(`${environment.apiUrl}/users/register`, user);
 	}
 

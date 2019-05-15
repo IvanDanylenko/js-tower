@@ -15,7 +15,7 @@ exports.login = function(req, res) {
         if (result === null) {
             res.status(500).send({error: 'An error has occured'});
         } else {
-            res.status(200).json({data: result});
+            res.status(200).json({data: { id: result.id, login: result.login, token:result.token, score: result.score}});
         }
     });
 };

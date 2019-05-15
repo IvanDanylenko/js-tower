@@ -11,7 +11,6 @@ exports.exercise = function(req, res){
     if(query) {
         let id = parseInt(query);
         db.loadDatabase({}, function () {
-            console.log('task');
             res.status(200).json({data: db.getCollection('exercises').find({taskId: id})});
         });
     } else {

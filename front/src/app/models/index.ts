@@ -3,5 +3,4 @@ export * from './exercise.model';
 export * from './exercisePart.model';
 export * from './exerciseTest.model';
 export * from './codeEditor.model';
-export * from './task.model';
 export * from './taskLevel.model';

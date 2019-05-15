@@ -3,8 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import {ExerciseModel, TaskLevelModel, TaskModel} from '@/models';
-
+import { ExerciseModel, TaskLevelModel } from '@/models';
 import { environment } from '@env/environment';
 
 @Injectable({
@@ -25,7 +24,7 @@ export class TaskService {
 		}));
 	}
 
-	getTaskExercises(id: number): Observable<ExerciseModel[]> {
+	/*getTaskExercises(id: number): Observable<ExerciseModel> {
 		const reqOpts = {
 			params: new HttpParams(),
 			headers: this.headers
@@ -34,5 +33,5 @@ export class TaskService {
 		return this.http.get(`${this.domainURL}/api/task/exercise`, reqOpts).pipe(map(data => {
 			return data['data'];
 		}));
-	}
+	}*/
 }

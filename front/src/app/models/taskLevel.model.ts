@@ -1,7 +1,7 @@
-import {TaskModel} from '@/models/task.model';
+import {ExerciseModel} from '@/models/exercise.model';
 
 export class TaskLevelModel {
 	id: number;
 	name: string;
-	tasks: TaskModel[];
+	tasks: ExerciseModel[];
 }

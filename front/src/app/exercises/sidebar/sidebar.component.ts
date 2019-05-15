@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { TaskService } from '@/_services/task.service';
 
-import { TaskLevelModel, ExerciseModel } from '@/models';;
+import { TaskLevelModel, ExerciseModel } from '@/models';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,8 +10,9 @@ import { TaskLevelModel, ExerciseModel } from '@/models';;
 })
 export class SidebarComponent implements OnInit {
 	show = false;
-	taskList: TaskLevelModel[];
-	exersiseList: ExerciseModel[];
+	@Input() taskList: TaskLevelModel[];
+	exercise: ExerciseModel;
+
 	constructor(private taskSrv: TaskService) {
 	}
 
@@ -22,10 +23,10 @@ export class SidebarComponent implements OnInit {
 		});
 	}
 
-	onExersiseSelect(taskId: number) {
+	/*onExersiseSelect(taskId: number) {
 		this.taskSrv.getTaskExercises(taskId).subscribe(data => {
-			this.exersiseList = data;
-			console.log(this.exersiseList);
+			this.exercise = data;
+			console.log(this.exercise);
 		});
-	}
+	}*/
 }

@@ -11,13 +11,17 @@
 				</ul>
 			</nav>
 			<div class="cabinet">
-				<a href="#" *ngIf="auth">
+				<a routerLink="/cabinet" *ngIf="auth">
 					<img src="assets/img/user-replacement.png" alt="User photo" class="photo">
 					<span>Персональний кабінет</span>
 				</a>
 				<a routerLink="/login" *ngIf="!auth">
 					<img src="assets/img/sign-in.svg" alt="" class="sign-in">
 					<span>Війти</span>
+				</a>
+				<a (click)="onLogout()" *ngIf="auth">
+					<img src="assets/img/sign-in.svg" alt="" class="sign-in">
+					<span>Вийти</span>
 				</a>
 			</div>
 		</div>

@@ -10,5 +10,4 @@ module.exports = function(app){
     app.post('/api/auth/register', authApi.register);
 
     app.get('/api/task/list', taskApi.taskList);
-	app.get('/api/task/exercise', taskApi.exercise);
 };
