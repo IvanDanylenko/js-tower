@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { User } from '../models';
-import {environment} from '../../environments/environment';
+import { UserModel } from '@/models';
+import { environment } from '@env/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,18 +11,18 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
 	getAll() {
-		return this.http.get<User[]>(`${environment.apiUrl}/users`);
+		return this.http.get<UserModel[]>(`${environment.apiUrl}/users`);
 	}
 
 	getById(id: number) {
 		return this.http.get(`${environment.apiUrl}/users/${id}`);
 	}
 
-	register(user: User) {
+	register(user: UserModel) {
 		return this.http.post(`${environment.apiUrl}/users/register`, user);
 	}
 
-	update(user: User) {
+	update(user: UserModel) {
 		return this.http.put(`${environment.apiUrl}/users/${user.id}`, user);
 	}
 

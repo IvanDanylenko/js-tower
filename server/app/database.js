@@ -9,20 +9,20 @@ db.addCollection('users').insert([
 
 db.addCollection('tasklevels').insert([
     {id: 1, name: 'Основи JavaScript',
-    tasks:[
-        {id:1 ,name: 'Вправа 1'},
-        {id:2 ,name: 'Вправа 2'},
-        {id:3 ,name: 'Вправа 3'},
-        {id:4 ,name: 'Вправа 4'},
-        {id:5 ,name: 'Вправа 5'}
+    tasks: [
+        {id: 1 ,name: 'Вправа 1'},
+        {id: 2 ,name: 'Вправа 2'},
+        {id: 3 ,name: 'Вправа 3'},
+        {id: 4 ,name: 'Вправа 4'},
+        {id: 5 ,name: 'Вправа 5'}
     ]},
     {id: 2, name: 'Продвинутый JavaScript',
-    task:[
-        {id:1 ,name: 'Вправа 1'},
-        {id:2 ,name: 'Вправа 2'},
-        {id:3 ,name: 'Вправа 3'},
-        {id:4 ,name: 'Вправа 4'},
-        {id:5 ,name: 'Вправа 5'}
+    tasks: [
+        {id: 1 ,name: 'Вправа 1'},
+        {id: 2 ,name: 'Вправа 2'},
+        {id: 3 ,name: 'Вправа 3'},
+        {id: 4 ,name: 'Вправа 4'},
+        {id: 5 ,name: 'Вправа 5'}
     ]}
 ]);
 
