@@ -10,16 +10,16 @@
 	// 	enableLiveAutocompletion: true
 	// });
 
-	const editor = ace.edit("editor", {	mode: "ace/mode/javascript" });
-	editor.setTheme("ace/theme/iplastic");
-	editor.setOptions({
-		fontSize: '22px',
-		enableBasicAutocompletion: true,
-		enableLiveAutocompletion: true
-	});
-editor.setValue(`function myFunc() {
-	var m = 100;
-	var str = 'string';
-	console.log(str);
-}`);
+// 	const editor = ace.edit("editor", {	mode: "ace/mode/javascript" });
+// 	editor.setTheme("ace/theme/iplastic");
+// 	editor.setOptions({
+// 		fontSize: '22px',
+// 		enableBasicAutocompletion: true,
+// 		enableLiveAutocompletion: true
+// 	});
+// editor.setValue(`function myFunc() {
+// 	var m = 100;
+// 	var str = 'string';
+// 	console.log(str);
+// }`);
 })();

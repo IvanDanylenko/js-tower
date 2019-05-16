@@ -25,6 +25,8 @@ import { SidebarComponent } from '@/exercises/sidebar';
 import { AlertComponent } from '@/_shared/alert.component';
 import { CabinetComponent } from '@/cabinet';
 import { AceDirective } from '@/helpers/ace.directive';
+import { Ex2Component } from './exercises/ex2/ex2.component';
+import { Ex3Component } from './exercises/ex3/ex3.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { AceDirective } from '@/helpers/ace.directive';
     RegisterComponent,
     AlertComponent,
 		AceDirective,
-    CabinetComponent
+    CabinetComponent,
+    Ex2Component,
+    Ex3Component
   ],
   imports: [
     BrowserModule,

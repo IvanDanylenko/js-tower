@@ -10,18 +10,23 @@
 					<li><a href="#">Додатково</a></li>
 				</ul>
 			</nav>
+			<!-- Personal cabinet -->
 			<div class="cabinet">
-				<a routerLink="/cabinet" *ngIf="auth">
-					<img src="assets/img/user-replacement.png" alt="User photo" class="photo">
-					<span>Персональний кабінет</span>
-				</a>
+				<div class="cabinet__inner" *ngIf="auth">
+					<a routerLink="/cabinet">
+						<img src="assets/img/user-replacement.png" alt="User photo" class="photo">
+						<span>Персональний кабінет</span>
+					</a>
+					<div class="cabinet__dropdown">
+						<a class="logout" (click)="onLogout()">
+							<img src="assets/img/sign-in.svg" alt="" class="sign-in">
+							<span>Вийти</span>
+						</a>
+					</div>
+				</div>
 				<a routerLink="/login" *ngIf="!auth">
 					<img src="assets/img/sign-in.svg" alt="" class="sign-in">
 					<span>Війти</span>
-				</a>
-				<a (click)="onLogout()" *ngIf="auth">
-					<img src="assets/img/sign-in.svg" alt="" class="sign-in">
-					<span>Вийти</span>
 				</a>
 			</div>
 		</div>
