@@ -23,7 +23,9 @@ db.addCollection('tasklevels').insert([
                 { id: 2, value: "/*Multiline comment*/" },
                 { id: 3, value: 1012}
             ],
-            codeEditor: [{id: 1, text: 'function test () { }'}]
+            codeEditor: [{id: 1, text: `function test () { 
+							
+						}`}]
         },
         {
             id: 2,
