@@ -9,7 +9,9 @@ import {TaskLevelModel,  SelectedTaskModel} from '@/models';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-	show = false;
+	showTasksList: boolean = false;
+	showSettings: boolean = false;
+	
 	@Input() taskList: TaskLevelModel[];
 	@Output() taskChange: EventEmitter<SelectedTaskModel> = new EventEmitter();
 

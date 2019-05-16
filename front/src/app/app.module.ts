@@ -21,12 +21,12 @@ import { ExercisesAllComponent, ExercisesListComponent, Ex1Component } from '@/e
 import { EditorComponent } from '@/exercises/ex1/editor';
 import { TaskComponent } from '@/exercises/ex1/task';
 import { SidebarComponent } from '@/exercises/sidebar';
+import { Ex2Component } from '@/exercises/ex2';
+import { Ex3Component } from '@/exercises/ex3';
 
 import { AlertComponent } from '@/_shared/alert.component';
 import { CabinetComponent } from '@/cabinet';
 import { AceDirective } from '@/helpers/ace.directive';
-import { Ex2Component } from './exercises/ex2/ex2.component';
-import { Ex3Component } from './exercises/ex3/ex3.component';
 
 @NgModule({
   declarations: [

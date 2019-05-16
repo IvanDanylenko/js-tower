@@ -16,9 +16,7 @@ export class ExercisesListComponent implements OnInit {
 		// get total number of all tasks for EX 1
 		this.taskService.getTaskList().subscribe(data => {
 			for (let i = 0; i < data.length; i++) {
-				for (let j = 0; j < data[i].tasks.length; j++) {
-					this.ex1Total++;
-				}
+				this.ex1Total += data[i].tasks.length;
 			}
 		});
 		// get progress of curent user

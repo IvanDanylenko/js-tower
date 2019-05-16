@@ -38,6 +38,7 @@ export class AceDirective {
 			enableBasicAutocompletion: true,
 			enableLiveAutocompletion: true
 		});
+
 		this.editor.getSession().setMode('ace/mode/javascript');
 
 		this.editor.on('change', (e) => {

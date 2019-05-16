@@ -60,6 +60,9 @@ a {
 		left: 0;
 		right: 0;
 		top: 100%;
+		a {
+			justify-content: center;
+		}
 	}
 	&:hover .cabinet__dropdown {
 		display: block;

@@ -46,4 +46,4 @@ Thumbs.db
 # Windows 10
 desktop.ini
 *.xd
-/js-tower.json
+js-tower.json
