@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home';
-import { Ex1Component, ExercisesAllComponent, ExercisesListComponent } from './exercises';
+import { ExercisesAllComponent, ExercisesListComponent } from './exercises';
+import { Ex1Component } from './exercises/ex1';
 import { Ex2Component } from './exercises/ex2';
 import { Ex3Component } from './exercises/ex3';
 import { LoginComponent } from './login';
