@@ -1,12 +1,12 @@
 <div class="sidebar">
 	<ul class="sidebar-list">
 		<li>
-			<button (click)="showTasksList = !showTasksList; showSettings = false">
+			<button (click)="showTasksList = !showTasksList; showSettings = false" title="Список завдань">
 				<img src="assets/img/task-list.png" alt="">
 			</button>
 		</li>
 		<li>
-			<button (click)="showSettings = !showSettings; showTasksList = false">
+			<button (click)="showSettings = !showSettings; showTasksList = false" title="Налаштування">
 				<img src="assets/img/task-settings.png" alt="">
 			</button>
 		</li>
@@ -16,7 +16,7 @@
 <div *ngIf="showTasksList" class="tasks-modal tasks-list">
 	<div class="tasks-modal__title">
 		<h4>Список завдань</h4>
-		<a (click)="showTasksList = false" class="close">&times;</a>
+		<a (click)="showTasksList = false" class="close" title="Закрити">&times;</a>
 	</div>
 	<div class="tasks-modal__content">
 		<div *ngFor="let level of taskList" class="tasks-modal__volume">
@@ -25,7 +25,7 @@
 				<li *ngFor="let task of level.tasks">
 					<a (click)="onTaskSelect(level.id, task.id)">
 						<i>{{task.id}}</i>
-						<strong>{{task.name}}</strong>
+						<strong title="{{task.name}}">{{task.name}}</strong>
 					</a>
 				</li>
 			</ul>
@@ -36,6 +36,6 @@
 <div *ngIf="showSettings" class="tasks-modal tasks-settings">
 	<div class="tasks-modal__title">
 		<h4>Налаштування</h4>
-		<a (click)="showSettings = false" class="close">&times;</a>
+		<a (click)="showSettings = false" class="close" title="Закрити">&times;</a>
 	</div>
 </div>
