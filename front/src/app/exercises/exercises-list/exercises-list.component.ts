@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TaskService } from '@/_services/task.service';
 
 @Component({
   selector: 'app-exercises-list',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exercises-list.component.scss']
 })
 export class ExercisesListComponent implements OnInit {
+	ex1Current: number;
+	ex1Total: number = 0;
 
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit() {
+		// get total number of all tasks for EX 1
+		this.taskService.getTaskList().subscribe(data => {
+			for (let i = 0; i < data.length; i++) {
+				this.ex1Total += data[i].tasks.length;
+			}
+		});
+		// get progress of curent user
+		this.ex1Current = JSON.parse(localStorage.getItem('currentUser')).score;
   }
 
 }

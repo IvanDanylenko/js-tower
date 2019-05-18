@@ -1,0 +1,15 @@
+<div class="description">
+	<h1 class="description__title">{{detail?.name}}
+	</h1>
+	<div [innerHtml] = detail?.description></div>
+
+	<hr>
+
+	<!-- Check list -->
+	<div class="check-list">
+		<h4>Потрібно виконати:</h4>
+		<ul>
+			<li *ngFor="let check of detail?.tasks">{{check.title}}</li>
+		</ul>
+	</div>
+</div>

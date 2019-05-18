@@ -6,7 +6,6 @@ a {
 }
 
 .header {
-  padding: 10px 0;
   font-size: 18px;
   background-image: linear-gradient(180deg, #1A02B8 0%, #15009D 100%);
 }
@@ -36,6 +35,8 @@ a {
 }
 
 .cabinet {
+	padding: 10px 5px;
+	position: relative;
   a {
     display: flex;
     align-items: center;
@@ -49,5 +50,22 @@ a {
 	}
 	.sign-in {
 		width: 25px;
+	}
+	.cabinet__dropdown {
+		display: none;
+		padding: 10px;
+		background: #0031CC;
+		border-radius: 3px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 100%;
+		z-index: 100;
+		a {
+			justify-content: center;
+		}
+	}
+	&:hover .cabinet__dropdown {
+		display: block;
 	}
 }

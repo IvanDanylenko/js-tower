@@ -2,12 +2,12 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ExerciseModel} from '@/models';
 
 @Component({
-  selector: 'app-task',
-  templateUrl: './task.component.html',
-  styleUrls: ['./task.component.scss']
+  selector: 'app-task1',
+  templateUrl: './task1.component.html',
+  styleUrls: ['./task1.component.scss']
 })
 
-export class TaskComponent implements OnInit {
+export class Task1Component implements OnInit {
 
 	@Input() detail: ExerciseModel;
 
