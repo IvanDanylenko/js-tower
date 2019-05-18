@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ExerciseModel, SelectedTaskModel, TaskLevelModel, CodeEditorModel} from '@/models';
 import { TaskService } from '@/_services/task.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-ex1',
@@ -13,7 +14,7 @@ export class Ex1Component implements OnInit {
 	currentExercise: ExerciseModel;
 	editorModel: CodeEditorModel = new CodeEditorModel();
 
-  constructor(private taskSrv: TaskService) { }
+  constructor(private taskSrv: TaskService, private toastr: ToastrService) { }
 
   ngOnInit() {
 		this.taskSrv.getTaskList().subscribe(data => {
@@ -32,5 +33,6 @@ export class Ex1Component implements OnInit {
 		this.editorModel = this.currentExercise.codeEditor[0];
 		console.log(this.currentExercise);
 		console.log(this.editorModel);
+		this.toastr.success("Hello, I'm the toastr message.");
 	}
 }

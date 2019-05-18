@@ -4,7 +4,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AceEditorModule } from 'ng2-ace-editor';
-
+import { ToastrModule } from 'ngx-toastr';
 /*fake-backend*/
 // import { fakeBackendProvider } from '@/helpers';
 
@@ -26,6 +26,7 @@ import { Ex3Component, Task3Component, Answer3Component } from '@/exercises/ex3'
 
 import { AlertComponent } from '@/_shared/alert.component';
 import { CabinetComponent } from '@/cabinet';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,11 @@ import { CabinetComponent } from '@/cabinet';
   ],
   imports: [
     BrowserModule,
+		BrowserAnimationsModule,
+		ToastrModule.forRoot({
+			timeOut: 5000,
+			positionClass: 'toast-bottom-right'
+		}),
 		AppRoutingModule,
 		ReactiveFormsModule,
     AppRoutingModule,
