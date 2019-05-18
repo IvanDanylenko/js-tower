@@ -11,7 +11,7 @@ export class Ex1Component implements OnInit {
 	show = false;
 	taskList: TaskLevelModel[];
 	currentExercise: ExerciseModel;
-	editor: CodeEditorModel = new CodeEditorModel();
+	editorModel: CodeEditorModel = new CodeEditorModel();
 
   constructor(private taskSrv: TaskService) { }
 
@@ -19,9 +19,9 @@ export class Ex1Component implements OnInit {
 		this.taskSrv.getTaskList().subscribe(data => {
 			this.taskList = data;
 			this.currentExercise = this.taskList[0].tasks[0];
-			this.editor = this.currentExercise.codeEditor[0];
+			this.editorModel = this.currentExercise.codeEditor[0];
 			console.log(this.currentExercise);
-			console.log(this.editor);
+			console.log(this.editorModel);
 		});
 	}
 
@@ -29,8 +29,8 @@ export class Ex1Component implements OnInit {
 		console.log(model);
 		const level = this.taskList.find(x => x.id === model.levelId);
 		this.currentExercise = level.tasks.find(t => t.id === model.taskId);
-		this.editor = this.currentExercise.codeEditor[0];
+		this.editorModel = this.currentExercise.codeEditor[0];
 		console.log(this.currentExercise);
-		console.log(this.editor);
+		console.log(this.editorModel);
 	}
 }

@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
+import { AceEditorModule } from 'ng2-ace-editor';
+
 /*fake-backend*/
 // import { fakeBackendProvider } from '@/helpers';
 
@@ -24,7 +26,6 @@ import { Ex3Component, Task3Component, Answer3Component } from '@/exercises/ex3'
 
 import { AlertComponent } from '@/_shared/alert.component';
 import { CabinetComponent } from '@/cabinet';
-import { AceDirective } from '@/helpers/ace.directive';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,6 @@ import { AceDirective } from '@/helpers/ace.directive';
     LoginComponent,
     RegisterComponent,
     AlertComponent,
-		AceDirective,
     CabinetComponent,
     Ex2Component,
     Ex3Component,
@@ -56,7 +56,8 @@ import { AceDirective } from '@/helpers/ace.directive';
 		ReactiveFormsModule,
     AppRoutingModule,
 		HttpClientModule,
-		FormsModule
+		FormsModule,
+		AceEditorModule
   ],
   providers: [
   	{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

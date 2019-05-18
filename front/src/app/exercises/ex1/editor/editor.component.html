@@ -1,6 +1,11 @@
 <div class="editor-wrapper">
-	<ace-editor id="editor" (textChanged)="onChange()" [text]="editor.text"></ace-editor>
-	<div id="editor1">{{editor.text}}</div>
+	<ace-editor #editor (textChanged)="onChange($event)"
+							[autoUpdateContent]="true"
+							[mode]="'javascript'"
+							[options]="options"
+							[readOnly]="false"
+							[theme]="'monokai'"
+							[(text)]="codeModel.text" style="min-height: 200px; width:100%; overflow: auto;"></ace-editor>
 </div>
 
 <!-- check answer -->
