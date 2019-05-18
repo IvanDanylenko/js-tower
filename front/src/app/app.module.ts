@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 /*fake-backend*/
@@ -55,7 +55,8 @@ import { AceDirective } from '@/helpers/ace.directive';
 		AppRoutingModule,
 		ReactiveFormsModule,
     AppRoutingModule,
-		HttpClientModule
+		HttpClientModule,
+		FormsModule
   ],
   providers: [
   	{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
