@@ -8,7 +8,7 @@ import { TaskService } from '@/_services/task.service';
 })
 export class ExercisesListComponent implements OnInit {
 	ex1Current: number;
-	ex1Total: number = 0;
+	ex1Total: number;
 
   constructor(private taskService: TaskService) { }
 

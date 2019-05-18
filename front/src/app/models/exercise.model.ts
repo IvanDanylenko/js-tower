@@ -7,12 +7,12 @@ export class ExerciseModel {
 	taskId: number;
 	name: string;
 	description: string;
-	parts: ExercisePartModel[];
+	tasks: ExercisePartModel[];
 	tests: ExerciseTestModel[];
 	codeEditor: CodeEditorModel;
 
 	constructor() {
-		this.parts = [];
+		this.tasks = [];
 		this.tests = [];
 	}
 }

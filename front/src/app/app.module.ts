@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -26,7 +27,7 @@ import { Ex3Component, Task3Component, Answer3Component } from '@/exercises/ex3'
 
 import { AlertComponent } from '@/_shared/alert.component';
 import { CabinetComponent } from '@/cabinet';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -56,7 +57,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 		BrowserAnimationsModule,
 		ToastrModule.forRoot({
 			timeOut: 5000,
-			positionClass: 'toast-bottom-right'
+			positionClass: 'toast-top-right'
 		}),
 		AppRoutingModule,
 		ReactiveFormsModule,

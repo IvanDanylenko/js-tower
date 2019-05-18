@@ -1,12 +1,13 @@
 <div class="answer">
-	<form action="#" method="GET">
+	<form [formGroup]="form" (ngSubmit)="onAnswer($event)" novalidate>
 		<h4>Введіть вашу відповідь:</h4>
-		<input type="text">
-		
+		<input type="text" formControlName="answer">
+		<div *ngIf="submitted && f.answer.errors" style="color: red">
+			<div class="error" *ngIf="f.answer.errors.required">Answer is required</div>
+		</div>
 		<!-- check answer -->
-		<button class="check-answer" title="Виконати перевірку">
+		<button type="submit" class="check-answer" title="Виконати перевірку">
 			<img src="assets/img/play-icon.png" alt="Перевірити">
 		</button>
-
 	</form>
 </div>

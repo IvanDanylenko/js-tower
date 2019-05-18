@@ -1,7 +1,9 @@
 <div class="description">
-	<h1 class="description__title">Завдання 1
-	</h1>
+	<h1 class="description__title">Завдання 1</h1>
 	<!-- question [innerHMTL]-->
 	<div innerHTML = "something">question</div>
-	<div style="padding: 20px 0;">codeEditor with setting <b>editor.setReadonly(true)</b></div>
+	<div style="padding: 20px 0;">
+		<ace-editor #editor [mode]="'javascript'" [options]="options" [readOnly]="true" [theme]="'monokai'" [(text)]="codeModel.text"
+								style="min-height: 400px; width:100%; overflow: auto;"></ace-editor>
+	</div>
 </div>

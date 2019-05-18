@@ -21,8 +21,6 @@ export class Ex1Component implements OnInit {
 			this.taskList = data;
 			this.currentExercise = this.taskList[0].tasks[0];
 			this.editorModel = this.currentExercise.codeEditor[0];
-			console.log(this.currentExercise);
-			console.log(this.editorModel);
 		});
 	}
 
