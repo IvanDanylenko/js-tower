@@ -1,4 +1,6 @@
 const db = require('../util/db');
+const jwtoken = require('jsonwebtoken');
+const jwtSecret = 'FACE7CDC-7643-4AC1-861D-42ED99CCCC32';
 
 exports.userList = function(req, res){
     db.loadDatabase({}, function () {
@@ -15,7 +17,8 @@ exports.login = function(req, res) {
         if (result === null) {
             res.status(500).send({error: 'An error has occured'});
         } else {
-            res.status(200).json({data: { id: result.id, login: result.login, token:result.token, score: result.score}});
+            const token = jwtoken.sign(result.login, jwtSecret);
+            res.status(200).json({data: { id: result.id, login: result.login, token: token, score: result.score}});
         }
     });
 };
