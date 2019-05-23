@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ExerciseModel, SelectedTaskModel, TaskLevelModel, CodeEditorModel} from '@/models';
+import { ExerciseModel, SelectedTaskModel, TaskLevelModel, CodeEditorModel } from '@/models';
 import { TaskService } from '@/_services/task.service';
 import { ToastrService } from 'ngx-toastr';
 
@@ -9,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./ex1.component.scss']
 })
 export class Ex1Component implements OnInit {
-	show = false;
+	show: Boolean = false;
 	taskList: TaskLevelModel[];
 	currentExercise: ExerciseModel;
 	editorModel: CodeEditorModel = new CodeEditorModel();

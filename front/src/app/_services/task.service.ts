@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -9,6 +9,7 @@ import { environment } from '@env/environment';
 @Injectable({
   providedIn: 'root'
 })
+
 export class TaskService {
 	headers: HttpHeaders;
 	domainURL = environment.apiUrl;
@@ -23,6 +24,9 @@ export class TaskService {
   		return data['data'];
 		}));
 	}
+
+	/*	My code */
+	
 
 	/*getTaskExercises(id: number): Observable<ExerciseModel> {
 		const reqOpts = {

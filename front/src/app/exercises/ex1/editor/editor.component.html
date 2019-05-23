@@ -4,11 +4,11 @@
 							[mode]="'javascript'"
 							[options]="options"
 							[readOnly]="false"
-							[theme]="'monokai'"
+							[theme]="'iplastic'"
 							[(text)]="codeModel.text" style="min-height: 200px; width:100%; overflow: auto;"></ace-editor>
 </div>
 
 <!-- check answer -->
-<button class="check-answer" title="Виконати перевірку">
+<button (click)="ex1Verification()" class="check-answer" title="Виконати перевірку">
 	<img src="assets/img/play-icon.png" alt="Перевірити">
 </button>

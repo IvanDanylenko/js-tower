@@ -1,5 +1,6 @@
-import { Component, Input, OnInit, ViewChild, AfterViewInit} from '@angular/core';
-import { CodeEditorModel} from '@/models';
+import { Component, Input, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { CodeEditorModel } from '@/models';
+import { Ex1Component } from '../ex1.component';
 
 @Component({
   selector: 'app-editor',
@@ -7,8 +8,10 @@ import { CodeEditorModel} from '@/models';
   styleUrls: ['./editor.component.scss']
 })
 export class EditorComponent implements OnInit, AfterViewInit {
+	editorCode: string;
+
 	@Input() codeModel: CodeEditorModel;
-	options:any = {maxLines: 1000, fontSize: '22px', printMargin: false};
+	options:any = { maxLines: 1000, fontSize: '22px', printMargin: false };
 
 	@ViewChild('editor') editor;
 
@@ -30,5 +33,13 @@ export class EditorComponent implements OnInit, AfterViewInit {
 		});
 	}
 
-	onChange(code) {}
+	onChange(code) {
+		this.editorCode = code;
+	}
+
+	// verification of the answer
+
+	ex1Verification(){
+		console.log(this.editorCode);
+	}
 }
