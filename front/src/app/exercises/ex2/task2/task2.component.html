@@ -1,7 +1,18 @@
 <div class="description">
-	<h1 class="description__title">Завдання 1
+	<h1 class="description__title">
+		{{detail?.name}}
 	</h1>
 	<!-- question [innerHMTL]-->
-	<div innerHTML = "something">question</div>
-	<div style="padding: 20px 0;">codeEditor with setting <b>editor.setReadonly(true)</b></div>
+	<div [innerHTML] = "detail?.question"></div>
+
+	<div class="editor-wrapper">
+		<ace-editor #editor
+			[mode]="'javascript'"
+			[options]="options"
+			[readOnly]="true"
+			[theme]="'iplastic'"
+			[(text)]="detail.codeEditor"
+			style="min-height: 200px; width:100%; overflow: auto;"
+		></ace-editor>
+	</div>
 </div>

@@ -7,9 +7,12 @@ db.addCollection('users').insert([
     {id: 2, login: 'demo', password: 'demo', token: 'demo-jwt-token', score: 0}
 ]);
 
-db.addCollection('tasklevels').insert([
-    {id: 1, name: 'Основи JavaScript',
-    tasks: [
+/* Collection for ex1 */
+db.addCollection('ex1').insert([
+    {
+			id: 1, 
+			name: 'Основи JavaScript',
+    	tasks: [
         {
             id: 1,
             name: 'Коментарі',
@@ -108,6 +111,78 @@ db.addCollection('tasklevels').insert([
         {id: 4, name: 'Вправа 4'},
         {id: 5, name: 'Вправа 5'}
     ]}
+]);
+
+/* Collection for ex2 */
+db.addCollection('ex2').insert([
+	{
+		id: 1,
+		name: "Рівень1",
+		tasks: [
+			{
+				id: 1,
+				name: 'Завдання 1',
+				question: `<p>Яке значення буде виведено в консоль?</p>`,
+				codeEditor: `function sayHello(name) {
+    return name.toUpperCase();
+}
+
+let yourSecondName = "2";
+sayHello(yourSecondName);
+console.log(sayHello("1") + " " + sayHello(yourSecondName));`,
+				answer: '1 2'
+			},
+			{
+				id: 2,
+				name: 'Завдання 2',
+				question: `<p>Яке значення виведе в консоль console.log, що спрацює останнім?</p>`,
+				codeEditor: `function noReturn() {
+	var sum = 0;
+	for(var i = 0; i < 10; i++) {
+		sum += i;
+	}
+	console.log(sum); // 1
+}
+console.log(noReturn()); // 2`,
+				answer: 'undefined'
+			}
+		]
+	}
+]);
+
+/* Collection for ex3 */
+db.addCollection('ex3').insert([
+	{
+		id: 1,
+		name: 'Рівень 1',
+		tasks: [
+			{
+				id: 1,
+				name: 'Завдання 1',
+				question: `<p>Скільки типів даних в JavaScript?</p>`,
+				choises: [
+					{ id: 1, name: '5' },
+					{ id: 2, name: '6' },
+					{ id: 3, name: '7' },
+					{ id: 4, name: '8' },
+				],
+				answer: 3 // choises id = 3, JavaScript have 7 types of data
+			},
+			{
+				id: 2,
+				name: 'Завдання 2',
+				question: `<p>Якого типу NaN?</p>`,
+				choises: [
+					{ id: 1, name: 'Object' },
+					{ id: 2, name: 'Number' },
+					{ id: 3, name: 'String' },
+					{ id: 4, name: 'null' },
+					{ id: 5, name: 'undefined' }
+				],
+				answer: 2 // choises id = 2, NaN has type Number
+			}
+		]
+	}
 ]);
 
 db.saveDatabase();

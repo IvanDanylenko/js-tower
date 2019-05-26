@@ -14,25 +14,25 @@ export class Ex1Component implements OnInit {
 	currentExercise: ExerciseModel;
 	editorModel: CodeEditorModel = new CodeEditorModel();
 
-  constructor(private taskSrv: TaskService, private toastr: ToastrService) { }
+  constructor(private taskService: TaskService, private toastr: ToastrService) { }
 
   ngOnInit() {
-		this.taskSrv.getTaskList().subscribe(data => {
+		this.taskService.getEx1TaskList().subscribe(data => {
 			this.taskList = data;
 			this.currentExercise = this.taskList[0].tasks[0];
 			this.editorModel = this.currentExercise.codeEditor[0];
-			console.log(this.currentExercise);
-			console.log(this.editorModel);
+			// console.log(this.currentExercise);
+			// console.log(this.editorModel);
 		});
 	}
 
 	onTaskChange(model: SelectedTaskModel) {
-		console.log(model);
+		// console.log(model);
 		const level = this.taskList.find(x => x.id === model.levelId);
 		this.currentExercise = level.tasks.find(t => t.id === model.taskId);
 		this.editorModel = this.currentExercise.codeEditor[0];
-		console.log(this.currentExercise);
-		console.log(this.editorModel);
+		// console.log(this.currentExercise);
+		// console.log(this.editorModel);
 		this.toastr.success("Hello, I'm the toastr message.");
 	}
 }

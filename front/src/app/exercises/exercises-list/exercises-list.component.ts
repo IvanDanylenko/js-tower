@@ -14,7 +14,7 @@ export class ExercisesListComponent implements OnInit {
 
   ngOnInit() {
 		// get total number of all tasks for EX 1
-		this.taskService.getTaskList().subscribe(data => {
+		this.taskService.getEx1TaskList().subscribe(data => {
 			for (let i = 0; i < data.length; i++) {
 				this.ex1Total += data[i].tasks.length;
 			}

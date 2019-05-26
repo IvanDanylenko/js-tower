@@ -19,7 +19,7 @@ export class SidebarComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.taskSrv.getTaskList().subscribe(data => {
+		this.taskSrv.getEx1TaskList().subscribe(data => {
 			this.taskList = data;
 		});
 	}

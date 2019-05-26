@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { CodeEditorModel } from '@/models';
-import { Ex1Component } from '../ex1.component';
 
 @Component({
   selector: 'app-editor',

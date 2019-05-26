@@ -1,4 +1,4 @@
-import {ExerciseModel} from '@/models/exercise.model';
+import { ExerciseModel } from '@/models/exercise.model';
 
 export class TaskLevelModel {
 	id: number;

@@ -7,7 +7,9 @@ module.exports = function(app){
 
 	app.post('/api/auth/login', authApi.login);
 	app.post('/api/auth/logout', authApi.logout);
-    app.post('/api/auth/register', authApi.register);
+  app.post('/api/auth/register', authApi.register);
 
-    app.get('/api/task/list', taskApi.taskList);
+	app.get('/api/ex1/task/list', taskApi.ex1TaskList);
+	app.get('/api/ex2/task/list', taskApi.ex2TaskList);
+  app.get('/api/ex3/task/list', taskApi.ex3TaskList);
 };

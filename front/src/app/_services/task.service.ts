@@ -18,11 +18,14 @@ export class TaskService {
 		this.headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 	}
 
-  getTaskList(): Observable<TaskLevelModel[]> {
+  getEx1TaskList(): Observable<TaskLevelModel[]> {
 		const reqOpts = { headers: this.headers };
-  	return this.http.get(`${this.domainURL}/api/task/list`, reqOpts).pipe(map(data => {
-  		return data['data'];
-		}));
+  	return this.http.get(`${this.domainURL}/api/ex1/task/list`, reqOpts).pipe(map(data => data['data']));
+	}
+
+	getEx2TaskList(): Observable<[]> {
+		const reqOpts = { headers: this.headers };
+		return this.http.get(`${this.domainURL}/api/ex2/task/list`, reqOpts).pipe(map(data => data['data']));
 	}
 
 	/*	My code */

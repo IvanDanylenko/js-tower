@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
 	) {
 		const auth = localStorage.getItem('currentUser');
 		if(auth) this.auth = true;
-		console.log(this.auth);
 	}
 
   ngOnInit() {
