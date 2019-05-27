@@ -33,6 +33,6 @@ export class Ex1Component implements OnInit {
 		this.editorModel = this.currentExercise.codeEditor[0];
 		// console.log(this.currentExercise);
 		// console.log(this.editorModel);
-		this.toastr.success("Hello, I'm the toastr message.");
+		/* this.toastr.success("Hello, I'm the toastr message."); */
 	}
 }

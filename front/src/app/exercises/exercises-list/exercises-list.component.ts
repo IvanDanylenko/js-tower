@@ -8,7 +8,11 @@ import { TaskService } from '@/_services/task.service';
 })
 export class ExercisesListComponent implements OnInit {
 	ex1Current: number;
+	ex2Current: number;
+	ex3Current: number;
 	ex1Total: number = 0;
+	ex2Total: number = 0;
+	ex3Total: number = 0;
 
   constructor(private taskService: TaskService) { }
 
@@ -19,8 +23,20 @@ export class ExercisesListComponent implements OnInit {
 				this.ex1Total += data[i].tasks.length;
 			}
 		});
+		this.taskService.getEx2TaskList().subscribe(data => {
+			for (let i = 0; i < data.length; i++) {
+				this.ex2Total += data[i].tasks.length;
+			}
+		});
+		this.taskService.getEx3TaskList().subscribe(data => {
+			for (let i = 0; i < data.length; i++) {
+				this.ex3Total += data[i].tasks.length;
+			}
+		});
 		// get progress of curent user
-		this.ex1Current = JSON.parse(localStorage.getItem('currentUser')).score;
+		this.ex1Current = JSON.parse(localStorage.getItem('currentUser')).ex1Score;
+		this.ex2Current = JSON.parse(localStorage.getItem('currentUser')).ex2Score;
+		this.ex3Current = JSON.parse(localStorage.getItem('currentUser')).ex3Score;
   }
 
 }

@@ -3,8 +3,26 @@ const loki = require('lokijs');
 const db = new loki('js-tower.json');
 
 db.addCollection('users').insert([
-    {id: 1, login: 'test', password: 'test', token: 'test-jwt-token', score: 0},
-    {id: 2, login: 'demo', password: 'demo', token: 'demo-jwt-token', score: 0}
+	{ id: 1, login: 'test', password: 'test', token: 'test-jwt-token', 
+		progress: {
+			ex1Level: 0,
+			ex1Score: 0,
+			ex2Level: 0,
+			ex2Score: 0,
+			ex3Level: 0,
+			ex3Score: 0
+		}
+	},
+	{ id: 2, login: 'demo', password: 'demo', token: 'demo-jwt-token', 
+		progress: {
+			ex1Level: 0,
+			ex1Score: 0,
+			ex2Level: 0,
+			ex2Score: 0,
+			ex3Level: 0,
+			ex3Score: 0
+		}
+	}
 ]);
 
 /* Collection for ex1 */

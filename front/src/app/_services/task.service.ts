@@ -23,9 +23,14 @@ export class TaskService {
   	return this.http.get(`${this.domainURL}/api/ex1/task/list`, reqOpts).pipe(map(data => data['data']));
 	}
 
-	getEx2TaskList(): Observable<[]> {
+	getEx2TaskList(): Observable<any> {
 		const reqOpts = { headers: this.headers };
 		return this.http.get(`${this.domainURL}/api/ex2/task/list`, reqOpts).pipe(map(data => data['data']));
+	}
+
+	getEx3TaskList(): Observable<any> {
+		const reqOpts = { headers: this.headers };
+		return this.http.get(`${this.domainURL}/api/ex3/task/list`, reqOpts).pipe(map(data => data['data']));
 	}
 
 	/*	My code */

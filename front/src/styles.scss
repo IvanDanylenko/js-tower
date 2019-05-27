@@ -198,8 +198,9 @@ $ex1_padding: 20px;
 	background: #eee;
 	overflow: auto;
 	display: flex;
-	justify-content: center;
-	align-items: flex-start;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
 	h4 {
 		margin: 20px 0;
 		font-size: 20px;

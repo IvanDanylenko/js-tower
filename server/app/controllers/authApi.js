@@ -18,7 +18,7 @@ exports.login = function(req, res) {
             res.status(500).send({error: 'An error has occured'});
         } else {
             const token = jwtoken.sign(result.login, jwtSecret);
-            res.status(200).json({data: { id: result.id, login: result.login, token: token, score: result.score}});
+					res.status(200).json({ data: { id: result.id, login: result.login, token: token, progress: result.progress }});
         }
     });
 };

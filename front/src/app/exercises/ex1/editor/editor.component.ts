@@ -39,6 +39,6 @@ export class EditorComponent implements OnInit, AfterViewInit {
 	// verification of the answer
 
 	ex1Verification(){
-		console.log(this.editorCode);
+		/* Verification */
 	}
 }
