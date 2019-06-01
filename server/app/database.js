@@ -50,7 +50,10 @@ db.addCollection('ex1').insert([
                 { id: 2, value: '/*' },
                 { id: 3, value: '*/' }
             ],
-            codeEditor: [{id: 1, text: ``}]
+						codeEditor: [{id: 1, text: `// Simple comment
+/* Multi
+line
+comment */`}]
         },
         {
             id: 2,
@@ -148,7 +151,7 @@ db.addCollection('ex2').insert([
 let yourSecondName = "2";
 sayHello(yourSecondName);
 console.log(sayHello("1") + " " + sayHello(yourSecondName));`,
-				answer: '1 2'
+				answer: '1'
 			},
 			{
 				id: 2,
@@ -162,7 +165,73 @@ console.log(sayHello("1") + " " + sayHello(yourSecondName));`,
 	console.log(sum); // 1
 }
 console.log(noReturn()); // 2`,
-				answer: 'undefined'
+				answer: '2'
+			}
+		]
+	},
+	{
+		id: 2,
+		name: "Рівень 2",
+		tasks: [
+			{
+				id: 3,
+				name: 'Завдання 3',
+				question: `<p>Яке значення буде виведено в консоль?</p>`,
+				codeEditor: `function sayHello(name) {
+    return name.toUpperCase();
+}
+
+let yourSecondName = "2";
+sayHello(yourSecondName);
+console.log(sayHello("1") + " " + sayHello(yourSecondName));`,
+				answer: '1'
+			},
+			{
+				id: 4,
+				name: 'Завдання 4',
+				question: `<p>Яке значення виведе в консоль console.log, що спрацює останнім?</p>`,
+				codeEditor: `function noReturn() {
+	var sum = 0;
+	for(var i = 0; i < 10; i++) {
+		sum += i;
+	}
+	console.log(sum); // 1
+}
+console.log(noReturn()); // 2`,
+				answer: '2'
+			}
+		]
+	},
+	{
+		id: 3,
+		name: "Рівень 3",
+		tasks: [
+			{
+				id: 5,
+				name: 'Завдання 5',
+				question: `<p>Яке значення буде виведено в консоль?</p>`,
+				codeEditor: `function sayHello(name) {
+    return name.toUpperCase();
+}
+
+let yourSecondName = "2";
+sayHello(yourSecondName);
+console.log(sayHello("1") + " " + sayHello(yourSecondName));`,
+				answer: '1'
+			},
+			{
+				id: 6,
+				name: 'Завдання 6',
+				question: `<p>Яке значення виведе в консоль console.log, що спрацює останнім?</p>`,
+				codeEditor: `function noReturn() {
+	var sum = 0;
+	for(var i = 0; i < 10; i++) {
+		sum += i;
+	}
+	console.log(sum); // 1
+}
+console.log(noReturn()); // 2`,
+				answer: '2'
 			}
 		]
 	}

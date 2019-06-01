@@ -1,23 +1,25 @@
 import { Component, Input, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { CodeEditorModel } from '@/models';
+import { TaskService } from '@/_services/task.service';
 
 @Component({
-  selector: 'app-editor',
-  templateUrl: './editor.component.html',
-  styleUrls: ['./editor.component.scss']
+  selector: 'app-answer1',
+  templateUrl: './answer1.component.html',
+	styleUrls: ['./answer1.component.scss']
 })
-export class EditorComponent implements OnInit, AfterViewInit {
+
+export class Answer1Component implements OnInit, AfterViewInit {
 	editorCode: string;
 
-	@Input() codeModel: CodeEditorModel;
+	@Input() detail: any;
 	options:any = { maxLines: 1000, fontSize: '22px', printMargin: false };
 
 	@ViewChild('editor') editor;
 
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit() {
-  	console.log(this.codeModel.text);
+  	// console.log(this.codeModel.text);
   }
 
   ngAfterViewInit() {
@@ -40,5 +42,15 @@ export class EditorComponent implements OnInit, AfterViewInit {
 
 	ex1Verification(){
 		/* Verification */
+		
+		// this.taskService.getEx1TaskList().subscribe(data => {
+		// 	console.log(data);
+		// });
+
+		// this.detail;
+		// console.log(this.detail.codeEditor[0].text);
+		console.log(this.editorCode);
+
+		// for (let i = 0; i < )
 	}
 }

@@ -20,13 +20,14 @@ import { LoginComponent } from '@/login';
 import { RegisterComponent } from '@/register';
 
 import { ExercisesAllComponent, ExercisesListComponent, SidebarComponent } from '@/exercises';
-import { Ex1Component, Task1Component, EditorComponent } from '@/exercises/ex1';
+import { Ex1Component, Task1Component, Answer1Component } from '@/exercises/ex1';
 import { Ex2Component, Task2Component, Answer2Component } from '@/exercises/ex2';
 import { Ex3Component, Task3Component, Answer3Component } from '@/exercises/ex3';
 
 import { AlertComponent } from '@/_shared/alert.component';
 import { CabinetComponent } from '@/cabinet';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AdditionallyComponent } from './additionally/additionally.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     HeaderComponent,
     Ex1Component,
 		Task1Component,
-		EditorComponent,
+		Answer1Component,
     ExercisesAllComponent,
     FooterComponent,
     SidebarComponent,
@@ -49,7 +50,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     Task2Component,
     Answer2Component,
     Answer3Component,
-    Task3Component
+    Task3Component,
+    AdditionallyComponent
   ],
   imports: [
     BrowserModule,

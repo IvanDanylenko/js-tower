@@ -13,6 +13,7 @@ export class Ex1Component implements OnInit {
 	taskList: TaskLevelModel[];
 	currentExercise: ExerciseModel;
 	editorModel: CodeEditorModel = new CodeEditorModel();
+	tests: any;
 
   constructor(private taskService: TaskService, private toastr: ToastrService) { }
 
@@ -31,6 +32,7 @@ export class Ex1Component implements OnInit {
 		const level = this.taskList.find(x => x.id === model.levelId);
 		this.currentExercise = level.tasks.find(t => t.id === model.taskId);
 		this.editorModel = this.currentExercise.codeEditor[0];
+		this.tests = this.currentExercise.tests;
 		// console.log(this.currentExercise);
 		// console.log(this.editorModel);
 		/* this.toastr.success("Hello, I'm the toastr message."); */

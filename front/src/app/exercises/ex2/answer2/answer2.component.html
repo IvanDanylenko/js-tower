@@ -1,7 +1,7 @@
 <div class="answer">
 	<h4>Введіть вашу відповідь:</h4>
 	<input [(ngModel)]="userAnswer" type="text">
-	<p>{{currentTask?.answer}}</p>
+	<p>{{detail?.answer}}</p>
 	<!-- check answer -->
 	<button (click)="checkAnswer()" class="check-answer" title="Виконати перевірку">
 		<img src="assets/img/play-icon.png" alt="Перевірити">

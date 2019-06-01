@@ -9,12 +9,14 @@ import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { AuthGuard } from './_guards';
 import { CabinetComponent } from './cabinet';
+import { AdditionallyComponent } from './additionally';
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent },
 	{ path: 'login', component: LoginComponent },
 	{ path: 'register', component: RegisterComponent },
 	{ path: 'cabinet', component: CabinetComponent, canActivate: [AuthGuard] },
+	{ path: 'additionally', component: AdditionallyComponent },
 	{ 
 		path: 'exercises',
 		component: ExercisesAllComponent,

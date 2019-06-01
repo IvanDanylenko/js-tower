@@ -34,9 +34,9 @@ export class ExercisesListComponent implements OnInit {
 			}
 		});
 		// get progress of curent user
-		this.ex1Current = JSON.parse(localStorage.getItem('currentUser')).ex1Score;
-		this.ex2Current = JSON.parse(localStorage.getItem('currentUser')).ex2Score;
-		this.ex3Current = JSON.parse(localStorage.getItem('currentUser')).ex3Score;
+		this.ex1Current = JSON.parse(localStorage.getItem('currentUser')).progress.ex1Score;
+		this.ex2Current = JSON.parse(localStorage.getItem('currentUser')).progress.ex2Score;
+		this.ex3Current = JSON.parse(localStorage.getItem('currentUser')).progress.ex3Score;
   }
 
 }

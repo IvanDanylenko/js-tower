@@ -10,6 +10,7 @@ import { SelectedTaskModel } from '@/models';
 export class Ex2Component implements OnInit {
 	taskList: any;
 	currentTask: any;
+	answer: string;
 	
 	taskLevel: number = JSON.parse(localStorage.getItem('currentUser')).progress.ex1Level;
 	taskId: number = JSON.parse(localStorage.getItem('currentUser')).progress.ex1Score;
@@ -24,7 +25,7 @@ export class Ex2Component implements OnInit {
 
 			/* console.log("Current Exercise")
 			console.log(this.currentExercise); */
-		})
+		});
 	}
 	
 	onTaskChange(model: SelectedTaskModel) {
@@ -41,12 +42,12 @@ export class Ex2Component implements OnInit {
 			currentUser.progress.ex2Score++;
 			this.taskId++;
 			this.currentTask = this.taskList[this.taskLevel].tasks.find(t => t.id === this.taskId + 1);
-		} else {
+		} else if (this.taskList.length > this.taskLevel) {
 			currentUser.progress.ex2Level++; 
 			currentUser.progress.ex2Score++;
 			console.log("Choose first task on next level");
+			console.log("Task Level" + this.taskLevel);
 		}
 		localStorage.setItem('currentUser', JSON.stringify(currentUser));
-
 	}
 }

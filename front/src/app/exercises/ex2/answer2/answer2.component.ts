@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-answer2',
@@ -8,18 +9,22 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class Answer2Component implements OnInit {
 	userAnswer: string = "";
 	
-	@Input() currentTask: any;
+	@Input() detail: any;
 
 	@Output() answerChecked = new EventEmitter();
 
-  constructor() { }
+  constructor(private toastr: ToastrService) { }
 
   ngOnInit() {
   }
 
 	checkAnswer() {
-		if (this.userAnswer == this.currentTask.answer) {
+		if (this.userAnswer == this.detail.answer) {
 			this.answerChecked.emit("Answer correct");
+			this.toastr.success("Відповідь правильна. Переходимо до наступного завдання");
+			this.userAnswer = "";
+		} else {
+			this.toastr.error("Ви допустили помилку. Спробуйте ще раз");
 		}
 		// console.log(this.answer);
 	}
