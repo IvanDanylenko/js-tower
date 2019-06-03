@@ -1,16 +1,19 @@
 <section class="cabinet">
 	<div class="container">
 		<h1>Налаштування</h1>
-		<div class="setting">
-			<h2>Обнулити прогрес</h2>
-			<button (click)="deleteProgress()">Виконати</button>
-		</div>
-		<div class="setting">
-			<form [formGroup]="changePasswordForm" (ngSubmit)="onChangePasswordSubmit()">
-				<h2>Новий пароль</h2>
-				<input type="text" formControlName="password">
-				<button type="submit">Зберегти</button>
-			</form>
+		<div class="setting-group">
+			<div class="setting">
+				<button (click)="resetAllProgress()">Обнулити весь прогрес</button>
+			</div>
+			<div class="setting">
+				<button (click)="resetEx1Progress()">Обнулити вправу "Тренуй себе"</button>
+			</div>
+			<div class="setting">
+				<button (click)="resetEx2Progress()">Обнулити вправу "Визнач результат"</button>
+			</div>
+			<div class="setting">
+				<button (click)="resetEx3Progress()">Обнулити вправу "Перевір знання"</button>
+			</div>
 		</div>
 	</div>
 </section>

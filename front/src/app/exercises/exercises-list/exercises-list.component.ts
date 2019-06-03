@@ -10,15 +10,15 @@ export class ExercisesListComponent implements OnInit {
 	ex1Current: number;
 	ex2Current: number;
 	ex3Current: number;
-	ex1Total: number = 0;
-	ex2Total: number = 0;
-	ex3Total: number = 0;
+	ex1Total: number = 10;
+	ex2Total: number = 10;
+	ex3Total: number = 10;
 
   constructor(private taskService: TaskService) { }
 
   ngOnInit() {
 		// get total number of all tasks for EX 1
-		this.taskService.getEx1TaskList().subscribe(data => {
+		/* this.taskService.getEx1TaskList().subscribe(data => {
 			for (let i = 0; i < data.length; i++) {
 				this.ex1Total += data[i].tasks.length;
 			}
@@ -32,7 +32,7 @@ export class ExercisesListComponent implements OnInit {
 			for (let i = 0; i < data.length; i++) {
 				this.ex3Total += data[i].tasks.length;
 			}
-		});
+		}); */
 		// get progress of curent user
 		this.ex1Current = JSON.parse(localStorage.getItem('currentUser')).progress.ex1Score;
 		this.ex2Current = JSON.parse(localStorage.getItem('currentUser')).progress.ex2Score;

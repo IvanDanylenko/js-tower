@@ -18,7 +18,7 @@ export class Answer2Component implements OnInit {
   ngOnInit() {
   }
 
-	checkAnswer() {
+	ex2Verification() {
 		if (this.userAnswer == this.detail.answer) {
 			this.answerChecked.emit("Answer correct");
 			this.toastr.success("Відповідь правильна. Переходимо до наступного завдання");

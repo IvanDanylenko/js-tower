@@ -20,19 +20,13 @@ export class Ex2Component implements OnInit {
   ngOnInit() {
 		this.taskService.getEx2TaskList().subscribe(data => {
 			this.taskList = data;
-			// console.log(data);
 			this.currentTask = this.taskList[this.taskLevel].tasks.find(t => t.id === this.taskId + 1);
-
-			/* console.log("Current Exercise")
-			console.log(this.currentExercise); */
 		});
 	}
 	
 	onTaskChange(model: SelectedTaskModel) {
-		// console.log(model);
 		const level = this.taskList.find(x => x.id === model.levelId);
 		this.currentTask = level.tasks.find(t => t.id === model.taskId);
-		/* this.toastr.success("Hello, I'm the toastr message."); */
 	}
 
 	onAnswerChecked() {

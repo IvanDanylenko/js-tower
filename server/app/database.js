@@ -50,11 +50,9 @@ db.addCollection('ex1').insert([
                 { id: 2, value: '/*' },
                 { id: 3, value: '*/' }
             ],
-						codeEditor: [{id: 1, text: `// Simple comment
-/* Multi
-line
-comment */`}]
-        },
+						codeEditor: [{id: 1, text: ``}]
+				},
+				
         {
             id: 2,
             name: 'Об\'явлення змінних',
@@ -69,7 +67,8 @@ comment */`}]
                 { id: 1, value: 'var myName;' }
             ],
             codeEditor: [{ id: 1, text: ``}]
-        },
+				},
+				
         {
             id: 3,
             name: 'Тип string',
@@ -79,11 +78,11 @@ comment */`}]
             ],
             tests: [
                 { id: 1, value: 'var myName' },
-                { id: 1, value: '=' },
-                { id: 1, value: '\'' }
+                { id: 1, value: '=' }
             ],
             codeEditor: [{ id: 1, text: `var myName;` }]
-        },
+				},
+				
         {
             id: 4,
             name: 'Вправа 4',
@@ -97,7 +96,8 @@ comment */`}]
                 { id: 2, value: "/*Multiline comment*/" },
                 { id: 3, value: 1012}
             ],
-            codeEditor: [{id: 1, text: 'function test () { }'}]},
+						codeEditor: [{id: 1, text: 'function test () { }'}]},
+						
         {
             id: 5,
             name: 'Вправа 5',
@@ -115,7 +115,8 @@ comment */`}]
     ]},
     {id: 2, name: 'Продвинутый JavaScript',
     tasks: [
-        {id: 1, name: 'Вправа 1',
+        {
+					id: 6, name: 'Вправа 6',
             description: '<p>In JavaScript, you can store a value in a variable with theassignment operator.</p><p><i>myVariable=5;</i></p><p>This assigns the <i>Number</i> value <i>5</i> to <i>myVariable.</i></p><p>Assignment always goes from right to left. Everything to the rightof the=operator is resolved before the value is assigned to thevariable to the left of the operator.</p><div><p><i>myVar=5;</i></p><p><i>myNum=myVar;</i></p></div><p>This assigns <i>5</i> to <i>myVar</i> and then resolves<i>myVar</i> to <i>5</i> again and assigns it to <i>myNum</i>.</p>',
             tasks: [
                 { id: 1, title: 'Повинен бути коментар //Simple comment' },
@@ -127,10 +128,62 @@ comment */`}]
                 { id: 3, value: 1012}
             ],
             codeEditor: [{id: 1, text: 'function test () { }'}]},
-        {id: 2, name: 'Вправа 2'},
-        {id: 3, name: 'Вправа 3'},
-        {id: 4, name: 'Вправа 4'},
-        {id: 5, name: 'Вправа 5'}
+			{
+				id: 7, name: 'Вправа 7',
+				description: '<p>In JavaScript, you can store a value in a variable with theassignment operator.</p><p><i>myVariable=5;</i></p><p>This assigns the <i>Number</i> value <i>5</i> to <i>myVariable.</i></p><p>Assignment always goes from right to left. Everything to the rightof the=operator is resolved before the value is assigned to thevariable to the left of the operator.</p><div><p><i>myVar=5;</i></p><p><i>myNum=myVar;</i></p></div><p>This assigns <i>5</i> to <i>myVar</i> and then resolves<i>myVar</i> to <i>5</i> again and assigns it to <i>myNum</i>.</p>',
+				tasks: [
+					{ id: 1, title: 'Повинен бути коментар //Simple comment' },
+					{ id: 2, title: 'Змінна повинна містити число 1012' }
+				],
+				tests: [
+					{ id: 1, value: '//Simple comment' },
+					{ id: 2, value: "/*Multiline comment*/" },
+					{ id: 3, value: 1012 }
+				],
+				codeEditor: [{ id: 1, text: 'function test () { }' }]
+			},
+			{
+				id: 8, name: 'Вправа 8',
+				description: '<p>In JavaScript, you can store a value in a variable with theassignment operator.</p><p><i>myVariable=5;</i></p><p>This assigns the <i>Number</i> value <i>5</i> to <i>myVariable.</i></p><p>Assignment always goes from right to left. Everything to the rightof the=operator is resolved before the value is assigned to thevariable to the left of the operator.</p><div><p><i>myVar=5;</i></p><p><i>myNum=myVar;</i></p></div><p>This assigns <i>5</i> to <i>myVar</i> and then resolves<i>myVar</i> to <i>5</i> again and assigns it to <i>myNum</i>.</p>',
+				tasks: [
+					{ id: 1, title: 'Повинен бути коментар //Simple comment' },
+					{ id: 2, title: 'Змінна повинна містити число 1012' }
+				],
+				tests: [
+					{ id: 1, value: '//Simple comment' },
+					{ id: 2, value: "/*Multiline comment*/" },
+					{ id: 3, value: 1012 }
+				],
+				codeEditor: [{ id: 1, text: 'function test () { }' }]
+			},
+			{
+				id: 9, name: 'Вправа 9',
+				description: '<p>In JavaScript, you can store a value in a variable with theassignment operator.</p><p><i>myVariable=5;</i></p><p>This assigns the <i>Number</i> value <i>5</i> to <i>myVariable.</i></p><p>Assignment always goes from right to left. Everything to the rightof the=operator is resolved before the value is assigned to thevariable to the left of the operator.</p><div><p><i>myVar=5;</i></p><p><i>myNum=myVar;</i></p></div><p>This assigns <i>5</i> to <i>myVar</i> and then resolves<i>myVar</i> to <i>5</i> again and assigns it to <i>myNum</i>.</p>',
+				tasks: [
+					{ id: 1, title: 'Повинен бути коментар //Simple comment' },
+					{ id: 2, title: 'Змінна повинна містити число 1012' }
+				],
+				tests: [
+					{ id: 1, value: '//Simple comment' },
+					{ id: 2, value: "/*Multiline comment*/" },
+					{ id: 3, value: 1012 }
+				],
+				codeEditor: [{ id: 1, text: 'function test () { }' }]
+			},
+			{
+				id: 10, name: 'Вправа 10',
+				description: '<p>In JavaScript, you can store a value in a variable with theassignment operator.</p><p><i>myVariable=5;</i></p><p>This assigns the <i>Number</i> value <i>5</i> to <i>myVariable.</i></p><p>Assignment always goes from right to left. Everything to the rightof the=operator is resolved before the value is assigned to thevariable to the left of the operator.</p><div><p><i>myVar=5;</i></p><p><i>myNum=myVar;</i></p></div><p>This assigns <i>5</i> to <i>myVar</i> and then resolves<i>myVar</i> to <i>5</i> again and assigns it to <i>myNum</i>.</p>',
+				tasks: [
+					{ id: 1, title: 'Повинен бути коментар //Simple comment' },
+					{ id: 2, title: 'Змінна повинна містити число 1012' }
+				],
+				tests: [
+					{ id: 1, value: '//Simple comment' },
+					{ id: 2, value: "/*Multiline comment*/" },
+					{ id: 3, value: 1012 }
+				],
+				codeEditor: [{ id: 1, text: 'function test () { }' }]
+			}
     ]}
 ]);
 
@@ -144,28 +197,29 @@ db.addCollection('ex2').insert([
 				id: 1,
 				name: 'Завдання 1',
 				question: `<p>Яке значення буде виведено в консоль?</p>`,
-				codeEditor: `function sayHello(name) {
+				codeEditor: [{
+					id: 1, value: `function sayHello(name) {
     return name.toUpperCase();
 }
 
-let yourSecondName = "2";
+let yourSecondName = "Colt";
 sayHello(yourSecondName);
-console.log(sayHello("1") + " " + sayHello(yourSecondName));`,
-				answer: '1'
+console.log(sayHello("John") + " " + sayHello(yourSecondName));`}],
+				answer: 'JOHN COLT'
 			},
 			{
 				id: 2,
 				name: 'Завдання 2',
 				question: `<p>Яке значення виведе в консоль console.log, що спрацює останнім?</p>`,
-				codeEditor: `function noReturn() {
+				codeEditor: [{ id: 1, value: `function noReturn() {
 	var sum = 0;
 	for(var i = 0; i < 10; i++) {
 		sum += i;
 	}
 	console.log(sum); // 1
 }
-console.log(noReturn()); // 2`,
-				answer: '2'
+console.log(noReturn()); // 2`}],
+				answer: 'undefined'
 			}
 		]
 	},
@@ -181,24 +235,24 @@ console.log(noReturn()); // 2`,
     return name.toUpperCase();
 }
 
-let yourSecondName = "2";
+let yourSecondName = "Colt";
 sayHello(yourSecondName);
-console.log(sayHello("1") + " " + sayHello(yourSecondName));`,
-				answer: '1'
+console.log(sayHello("John") + " " + sayHello(yourSecondName));`,
+				answer: 'JOHN COLT'
 			},
 			{
 				id: 4,
 				name: 'Завдання 4',
 				question: `<p>Яке значення виведе в консоль console.log, що спрацює останнім?</p>`,
-				codeEditor: `function noReturn() {
+				codeEditor: [{ id: 1, value:`function noReturn() {
 	var sum = 0;
 	for(var i = 0; i < 10; i++) {
 		sum += i;
 	}
 	console.log(sum); // 1
 }
-console.log(noReturn()); // 2`,
-				answer: '2'
+console.log(noReturn()); // 2`}],
+				answer: 'undefined'
 			}
 		]
 	},

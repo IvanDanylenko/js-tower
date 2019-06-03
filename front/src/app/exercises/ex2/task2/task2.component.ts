@@ -22,4 +22,7 @@ export class Task2Component implements OnInit {
   ngOnInit() {
   }
 
+	showDetail() {
+		console.log(this.detail);
+	}
 }

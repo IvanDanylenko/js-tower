@@ -1,5 +1,5 @@
 <div class="description">
-	<h1 class="description__title">
+	<h1 (click)="showDetail()" class="description__title">
 		{{detail?.name}}
 	</h1>
 	<!-- question [innerHMTL]-->
@@ -11,8 +11,8 @@
 			[options]="options"
 			[readOnly]="true"
 			[theme]="'iplastic'"
-			
-			style="min-height: 200px; width:100%; overflow: auto;"
+			[(text)]="detail?.codeEditor[0].value"
+			style="min-height: 72vh; width:100%; overflow: auto;"
 		></ace-editor>
 	</div>
 </div>

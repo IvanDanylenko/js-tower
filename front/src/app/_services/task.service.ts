@@ -33,17 +33,14 @@ export class TaskService {
 		return this.http.get(`${this.domainURL}/api/ex3/task/list`, reqOpts).pipe(map(data => data['data']));
 	}
 
-	/*	My code */
-	
-
-	/*getTaskExercises(id: number): Observable<ExerciseModel> {
-		const reqOpts = {
-			params: new HttpParams(),
-			headers: this.headers
-		};
-		reqOpts.params = reqOpts.params.set('taskId', id.toString());
-		return this.http.get(`${this.domainURL}/api/task/exercise`, reqOpts).pipe(map(data => {
-			return data['data'];
-		}));
-	}*/
+	// getExercises(): Observable<any> {
+		// const reqOpts = {
+		// 	params: new HttpParams(),
+		// 	headers: this.headers
+		// };
+		// reqOpts.params = reqOpts.params.set('taskId', id.toString());
+		// return this.http.get(`${this.domainURL}/api/task/exercise`, reqOpts).pipe(map(data => {
+		// 	return data['data'];
+		// }));
+	// }
 }
