@@ -302,10 +302,10 @@ db.addCollection('ex3').insert([
 				name: 'Завдання 1',
 				question: `<p>Скільки типів даних в JavaScript?</p>`,
 				choises: [
-					{ id: 1, name: '5' },
-					{ id: 2, name: '6' },
-					{ id: 3, name: '7' },
-					{ id: 4, name: '8' },
+					{ id: 1, name: 'П\'ять' },
+					{ id: 2, name: 'Шість' },
+					{ id: 3, name: 'Сім' },
+					{ id: 4, name: 'Вісім' },
 				],
 				answer: 3 // choises id = 3, JavaScript have 7 types of data
 			},

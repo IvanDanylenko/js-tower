@@ -8,6 +8,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class Answer3Component implements OnInit {
 
+	activeItem: Number = 0;
+
 	@Input() detail: any;
 
 	@Output() answerChecked = new EventEmitter();
@@ -17,18 +19,17 @@ export class Answer3Component implements OnInit {
   ngOnInit() {
   }
 
+	onSelect(item) {
+		this.activeItem = item.id;
+	}
+
 	ex3Verification() {
-		console.log("Success");
-		/* const tests = this.detail.tests;
-
-		for (let i = 0; i < tests.length; i++) {
-			if (this.editorCode.indexOf(tests[i].value) == -1) {
-				this.toastr.error("Ви допустили помилку. Спробуйте ще раз");
-				return;
-			}
+		if (this.activeItem == this.detail.answer) {
+			this.toastr.success("Відповідь правильна. Переходимо до наступного завдання");
+			this.answerChecked.emit("Answer correct");
+			this.activeItem = 0;
+		} else {
+			this.toastr.error("Ви допустили помилку. Спробуйте ще раз");
 		}
-
-		this.toastr.success("Відповідь правильна. Переходимо до наступного завдання");
-		this.answerChecked.emit("Answer correct"); */
 	}
 }

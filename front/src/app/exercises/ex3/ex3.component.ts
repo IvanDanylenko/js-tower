@@ -30,6 +30,34 @@ export class Ex3Component implements OnInit {
 	}
 
 	onAnswerChecked() {
-		console.log("answer checked");
+		const taskId = this.currentExercise.id;
+		const nextTaskId = taskId + 1;
+		const lastTasksLength = this.taskList[this.taskList.length - 1].tasks.length;
+		const lastTaskId = this.taskList[this.taskList.length - 1].tasks[lastTasksLength - 1].id;
+		// it was last task available
+		if (nextTaskId > lastTaskId) {
+			this.toastr.error("Ви виконали останнє завдання");
+			let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+			currentUser.progress.ex3Score = taskId;
+			localStorage.setItem('currentUser', JSON.stringify(currentUser));
+			return;
+		}
+		// redirect to next task
+		let taskLevel;
+
+		for (let i = 0; i < this.taskList.length; i++) {
+			let levelLastTaskId = this.taskList[i].tasks[this.taskList[i].tasks.length - 1].id;
+			if (nextTaskId <= levelLastTaskId) {
+				taskLevel = i;
+				this.currentExercise = this.taskList[taskLevel].tasks.find(t => t.id === nextTaskId);
+				break;
+			}
+		}
+
+		// memorize in localStorage
+		let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+		currentUser.progress.ex3Score = taskId;
+		currentUser.progress.ex3Level = taskLevel;
+		localStorage.setItem('currentUser', JSON.stringify(currentUser));
 	}
 }

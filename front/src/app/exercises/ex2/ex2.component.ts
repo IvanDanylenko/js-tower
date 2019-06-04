@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '@/_services/task.service';
 import { SelectedTaskModel } from '@/models';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-ex2',
@@ -9,39 +10,56 @@ import { SelectedTaskModel } from '@/models';
 })
 export class Ex2Component implements OnInit {
 	taskList: any;
-	currentTask: any;
+	currentExercise: any;
 	answer: string;
 	
 	taskLevel: number = JSON.parse(localStorage.getItem('currentUser')).progress.ex1Level;
 	taskId: number = JSON.parse(localStorage.getItem('currentUser')).progress.ex1Score;
 
-	constructor(private taskService: TaskService) { }
+	constructor(private taskService: TaskService, private toastr: ToastrService) { }
 
   ngOnInit() {
+		let currentUser = JSON.parse(localStorage.getItem('currentUser'));
 		this.taskService.getEx2TaskList().subscribe(data => {
 			this.taskList = data;
-			this.currentTask = this.taskList[this.taskLevel].tasks.find(t => t.id === this.taskId + 1);
+			this.currentExercise = this.taskList[currentUser.progress.ex2Level].tasks[currentUser.progress.ex2Score];
 		});
 	}
 	
 	onTaskChange(model: SelectedTaskModel) {
 		const level = this.taskList.find(x => x.id === model.levelId);
-		this.currentTask = level.tasks.find(t => t.id === model.taskId);
+		this.currentExercise = level.tasks.find(t => t.id === model.taskId);
 	}
 
 	onAnswerChecked() {
-		const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-		if (this.taskList[this.taskLevel].tasks.find(t => t.id === this.taskId + 1)) {
-			console.log("Choose next task on this level");
-			currentUser.progress.ex2Score++;
-			this.taskId++;
-			this.currentTask = this.taskList[this.taskLevel].tasks.find(t => t.id === this.taskId + 1);
-		} else if (this.taskList.length > this.taskLevel) {
-			currentUser.progress.ex2Level++; 
-			currentUser.progress.ex2Score++;
-			console.log("Choose first task on next level");
-			console.log("Task Level" + this.taskLevel);
+		const taskId = this.currentExercise.id;
+		const nextTaskId = taskId + 1;
+		const lastTasksLength = this.taskList[this.taskList.length - 1].tasks.length;
+		const lastTaskId = this.taskList[this.taskList.length - 1].tasks[lastTasksLength - 1].id;
+		// it was last task available
+		if (nextTaskId > lastTaskId) {
+			this.toastr.error("Ви виконали останнє завдання");
+			let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+			currentUser.progress.ex2Score = taskId;
+			localStorage.setItem('currentUser', JSON.stringify(currentUser));
+			return;
 		}
+		// redirect to next task
+		let taskLevel;
+
+		for (let i = 0; i < this.taskList.length; i++) {
+			let levelLastTaskId = this.taskList[i].tasks[this.taskList[i].tasks.length - 1].id;
+			if (nextTaskId <= levelLastTaskId) {
+				taskLevel = i;
+				this.currentExercise = this.taskList[taskLevel].tasks.find(t => t.id === nextTaskId);
+				break;
+			}
+		}
+
+		// memorize in localStorage
+		let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+		currentUser.progress.ex2Score = taskId;
+		currentUser.progress.ex2Level = taskLevel;
 		localStorage.setItem('currentUser', JSON.stringify(currentUser));
 	}
 }
