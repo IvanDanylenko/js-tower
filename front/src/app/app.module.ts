@@ -5,8 +5,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AceEditorModule } from 'ng2-ace-editor';
 import { ToastrModule } from 'ngx-toastr';
-/*fake-backend*/
-// import { fakeBackendProvider } from '@/helpers';
 
 import { JwtInterceptor, ErrorInterceptor, BodyTranspilator } from '@/helpers';
 
@@ -35,8 +33,8 @@ import { AdditionallyComponent } from './additionally/additionally.component';
     HomeComponent,
     HeaderComponent,
     Ex1Component,
-		Task1Component,
-		Answer1Component,
+    Task1Component,
+    Answer1Component,
     ExercisesAllComponent,
     FooterComponent,
     SidebarComponent,
@@ -55,26 +53,23 @@ import { AdditionallyComponent } from './additionally/additionally.component';
   ],
   imports: [
     BrowserModule,
-		BrowserAnimationsModule,
-		ToastrModule.forRoot({
-			timeOut: 5000,
-			positionClass: 'toast-top-right'
-		}),
-		AppRoutingModule,
-		ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-top-right'
+    }),
     AppRoutingModule,
-		HttpClientModule,
-		FormsModule,
-		AceEditorModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    AceEditorModule
   ],
   providers: [
-  	{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-		{ provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-
-		// provider used to create fake backend
-		// fakeBackendProvider,
-		BodyTranspilator
-	],
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    BodyTranspilator
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

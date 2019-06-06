@@ -3,7 +3,7 @@
 		{{detail?.name}}
 	</h1>
 	<!-- question [innerHMTL]-->
-	<div [innerHTML] = "detail?.question"></div>
+	<div [innerHTML] = "detail?.question" class="question-block"></div>
 
 	<div class="editor-wrapper">
 		<ace-editor #editor
@@ -11,7 +11,7 @@
 			[options]="options"
 			[readOnly]="true"
 			[theme]="'iplastic'"
-			[(text)]="detail?.codeEditor[0].value"
+			[(text)]="detail?.codeEditor[0].text"
 			style="min-height: 72vh; width:100%; overflow: auto;"
 		></ace-editor>
 	</div>

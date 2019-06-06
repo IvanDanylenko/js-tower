@@ -19,7 +19,13 @@ export class Ex3Component implements OnInit {
 		let currentUser = JSON.parse(localStorage.getItem('currentUser'));
 		this.taskService.getEx3TaskList().subscribe(data => {
 			this.taskList = data;
-			this.currentExercise = this.taskList[currentUser.progress.ex3Level].tasks[currentUser.progress.ex3Score];
+			// condition on last available task
+			let lastTasks = this.taskList[this.taskList.length - 1].tasks;
+			if (currentUser.progress.ex1Score == lastTasks[lastTasks.length - 1].id) {
+				this.currentExercise = lastTasks[lastTasks.length - 1];
+			} else {
+				this.currentExercise = this.taskList[currentUser.progress.ex3Level].tasks[currentUser.progress.ex3Score];
+			}
 		});
 	}
 	
@@ -36,7 +42,7 @@ export class Ex3Component implements OnInit {
 		const lastTaskId = this.taskList[this.taskList.length - 1].tasks[lastTasksLength - 1].id;
 		// it was last task available
 		if (nextTaskId > lastTaskId) {
-			this.toastr.error("Ви виконали останнє завдання");
+			this.toastr.info("Ви виконали останнє завдання");
 			let currentUser = JSON.parse(localStorage.getItem('currentUser'));
 			currentUser.progress.ex3Score = taskId;
 			localStorage.setItem('currentUser', JSON.stringify(currentUser));

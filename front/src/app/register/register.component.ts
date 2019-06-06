@@ -12,51 +12,51 @@ import {LoginModel, UserModel} from '../models';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-	registerForm: FormGroup;
-	loading = false;
-	submitted = false;
+  registerForm: FormGroup;
+  loading = false;
+  submitted = false;
 
   constructor(
-		private formBuilder: FormBuilder,
-		private router: Router,
-		private authService: AuthenticationService,
-		private userService: UserService,
-		private alertService: AlertService
-	) {
-		// redirect to home if already logged in
-		if (this.authService.currentUserValue) {
-			this.router.navigate(['/']);
-		}
-	}
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private authService: AuthenticationService,
+    private userService: UserService,
+    private alertService: AlertService
+  ) {
+    // redirect to home if already logged in
+    if (this.authService.currentUserValue) {
+      this.router.navigate(['/']);
+    }
+  }
 
   ngOnInit() {
-		// register form with FormBuilder
-		this.registerForm = this.formBuilder.group({
-			login: ['', Validators.required],
-			password: ['', Validators.required],
-			passwordRepeat: ['', Validators.required]
-		});
-	}
+    // register form with FormBuilder
+    this.registerForm = this.formBuilder.group({
+      login: ['', Validators.required],
+      password: ['', Validators.required],
+      passwordRepeat: ['', Validators.required]
+    });
+  }
 
-	get f() { return this.registerForm.controls; }
+  get f() { return this.registerForm.controls; }
 
-	onSubmit() {
-		this.submitted = true;
-		if (this.registerForm.invalid) {
-			return;
-		}
+  onSubmit() {
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+    }
 
-		this.loading = true;
-		const user = new LoginModel(this.f.login.value, this.f.password.value);
-		this.userService.register(user).pipe(first())
-			.subscribe(
-				data => {
-					this.alertService.success('Registration successful', true);
-					this.router.navigate(['/login']);
-				},
-				error => {
-					this.alertService.error(error);
-					this.loading = false;
-				});
-	}
+    this.loading = true;
+    const user = new LoginModel(this.f.login.value, this.f.password.value);
+    this.userService.register(user).pipe(first())
+      .subscribe(
+        data => {
+          this.alertService.success('Registration successful', true);
+          this.router.navigate(['/login']);
+        },
+        error => {
+          this.alertService.error(error);
+          this.loading = false;
+        });
+  }
 }

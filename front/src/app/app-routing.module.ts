@@ -12,22 +12,22 @@ import { CabinetComponent } from './cabinet';
 import { AdditionallyComponent } from './additionally';
 
 const routes: Routes = [
-	{ path: '', component: HomeComponent },
-	{ path: 'login', component: LoginComponent },
-	{ path: 'register', component: RegisterComponent },
-	{ path: 'cabinet', component: CabinetComponent, canActivate: [AuthGuard] },
-	{ path: 'additionally', component: AdditionallyComponent },
-	{ 
-		path: 'exercises',
-		component: ExercisesAllComponent,
-		children: [
-			{ path: '', component: ExercisesListComponent },
-			{ path: 'ex1', component: Ex1Component, canActivate: [AuthGuard] },
-			{ path: 'ex2', component: Ex2Component, canActivate: [AuthGuard] },
-			{ path: 'ex3', component: Ex3Component, canActivate: [AuthGuard] }
-		]
-	},
-	{path: '**', redirectTo: '' }
+  { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'cabinet', component: CabinetComponent, canActivate: [AuthGuard] },
+  { path: 'additionally', component: AdditionallyComponent },
+  { 
+    path: 'exercises',
+    component: ExercisesAllComponent,
+    children: [
+      { path: '', component: ExercisesListComponent },
+      { path: 'ex1', component: Ex1Component, canActivate: [AuthGuard] },
+      { path: 'ex2', component: Ex2Component, canActivate: [AuthGuard] },
+      { path: 'ex3', component: Ex3Component, canActivate: [AuthGuard] }
+    ]
+  },
+  {path: '**', redirectTo: '' }
 ];
 
 @NgModule({
