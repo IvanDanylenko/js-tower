@@ -9,7 +9,7 @@ import { ExerciseModel } from '@/models';
 
 export class Task1Component implements OnInit {
 
-	@Input() detail: any;
+  @Input() detail: any;
 
   constructor() { }
 

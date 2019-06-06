@@ -1,21 +1,21 @@
 const db = require('../util/db');
 
 exports.ex1TaskList = function(req, res){
-	db.loadDatabase({}, function () {
-			res.status(200).json({data: db.getCollection('ex1').data});
-	});
+  db.loadDatabase({}, function () {
+      res.status(200).json({data: db.getCollection('ex1').data});
+  });
 };
 
 exports.ex2TaskList = function (req, res) {
-	db.loadDatabase({}, function () {
-		res.status(200).json({ data: db.getCollection('ex2').data });
-	});
+  db.loadDatabase({}, function () {
+    res.status(200).json({ data: db.getCollection('ex2').data });
+  });
 };
 
 exports.ex3TaskList = function (req, res) {
-	db.loadDatabase({}, function () {
-		res.status(200).json({ data: db.getCollection('ex3').data });
-	});
+  db.loadDatabase({}, function () {
+    res.status(200).json({ data: db.getCollection('ex3').data });
+  });
 };
 
 exports.exercise = function(req, res){

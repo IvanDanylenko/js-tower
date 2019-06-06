@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class Task3Component implements OnInit {
 
-	@Input() detail: any;
+  @Input() detail: any;
 
   constructor() { }
 

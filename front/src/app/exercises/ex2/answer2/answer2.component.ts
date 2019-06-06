@@ -7,25 +7,25 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./answer2.component.scss']
 })
 export class Answer2Component implements OnInit {
-	userAnswer: string = "";
-	
-	@Input() detail: any;
+  userAnswer: string = "";
+  
+  @Input() detail: any;
 
-	@Output() answerChecked = new EventEmitter();
+  @Output() answerChecked = new EventEmitter();
 
   constructor(private toastr: ToastrService) { }
 
   ngOnInit() {
   }
 
-	ex2Verification() {
-		if (this.userAnswer == this.detail.answer) {
-			this.answerChecked.emit("Answer correct");
-			this.toastr.success("Відповідь правильна. Переходимо до наступного завдання");
-			this.userAnswer = "";
-		} else {
-			this.toastr.error("Ви допустили помилку. Спробуйте ще раз");
-		}
-		// console.log(this.answer);
-	}
+  ex2Verification() {
+    if (this.userAnswer == this.detail.answer) {
+      this.answerChecked.emit("Answer correct");
+      this.toastr.success("Відповідь правильна. Переходимо до наступного завдання");
+      this.userAnswer = "";
+    } else {
+      this.toastr.error("Ви допустили помилку. Спробуйте ще раз");
+    }
+    // console.log(this.answer);
+  }
 }

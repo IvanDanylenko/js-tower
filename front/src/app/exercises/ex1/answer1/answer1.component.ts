@@ -4,58 +4,58 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-answer1',
   templateUrl: './answer1.component.html',
-	styleUrls: ['./answer1.component.scss']
+  styleUrls: ['./answer1.component.scss']
 })
 
 export class Answer1Component implements OnInit, AfterViewInit {
-	editorCode: string;
+  editorCode: string;
 
-	@Input() detail: any;
+  @Input() detail: any;
 
-	@Output() answerChecked = new EventEmitter();
+  @Output() answerChecked = new EventEmitter();
 
-	options:any = { maxLines: 1000, fontSize: '22px', printMargin: false };
+  options:any = { maxLines: 1000, fontSize: '22px', printMargin: false };
 
-	@ViewChild('editor') editor;
+  @ViewChild('editor') editor;
 
-	constructor(private toastr: ToastrService) { }
+  constructor(private toastr: ToastrService) { }
 
   ngOnInit() {
   }
 
   ngAfterViewInit() {
-		this.editor.getEditor().setOptions({
-			enableBasicAutocompletion: true
-		});
-		this.editor.getEditor().commands.addCommand({
-			name: 'showOtherCompletions',
-			bindKey: 'Ctrl-.',
-			exec: function (editor) {
-			}
-		});
-	}
+    this.editor.getEditor().setOptions({
+      enableBasicAutocompletion: true
+    });
+    this.editor.getEditor().commands.addCommand({
+      name: 'showOtherCompletions',
+      bindKey: 'Ctrl-.',
+      exec: function (editor) {
+      }
+    });
+  }
 
-	onChange(code) {
-		this.editorCode = code;
-	}
+  onChange(code) {
+    this.editorCode = code;
+  }
 
-	// verification of the answer
+  // verification of the answer
 
-	ex1Verification(){
-		const tests = this.detail.tests;
+  ex1Verification(){
+    const tests = this.detail.tests;
 
-		for (let i = 0; i < tests.length; i++) {
-			if (!this.editorCode) {
-				this.toastr.error("Ви допустили помилку. Спробуйте ще раз");
-				return;
-			}
-			if (this.editorCode.indexOf(tests[i].value) == -1) {
-				this.toastr.error("Ви допустили помилку. Спробуйте ще раз");
-				return;
-			}
-		}
+    for (let i = 0; i < tests.length; i++) {
+      if (!this.editorCode) {
+        this.toastr.error("Ви допустили помилку. Спробуйте ще раз");
+        return;
+      }
+      if (this.editorCode.indexOf(tests[i].value) == -1) {
+        this.toastr.error("Ви допустили помилку. Спробуйте ще раз");
+        return;
+      }
+    }
 
-		this.toastr.success("Відповідь правильна. Переходимо до наступного завдання");
-		this.answerChecked.emit("Answer correct");
-	}
+    this.toastr.success("Відповідь правильна. Переходимо до наступного завдання");
+    this.answerChecked.emit("Answer correct");
+  }
 }

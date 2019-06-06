@@ -1,32 +1,12 @@
 <div class="answer">
-	<h4>Виберіть правильну відповідь:</h4>
+  <h4>Виберіть правильну відповідь:</h4>
 
-	<!-- <label for="one">
-		<input type="radio" id="one" name="answer"> 
-		<span>Перша відповідь</span>
-	</label>
-	<label for="two">
-		<input type="radio" id="two" name="answer"> 
-		<span>Друга відповідь</span>
-	</label>
-	<label for="three">
-		<input type="radio" id="three" name="answer"> 
-		<span>Третя відповідь</span>
-	</label>
-	<label for="four">
-		<input type="radio" id="four" name="answer"> 
-		<span>Четверта відповідь</span>
-	</label> -->
+  <ul class="choises">
+    <li *ngFor="let item of detail?.choises" (click)="onSelect(item)" [class.active] = "item.id == activeItem">{{item.name}}</li>
+  </ul>
 
-	<ul class="choises">
-		<li *ngFor="let item of detail?.choises" (click)="onSelect(item)" [class.active] = "item.id == activeItem">{{item.name}}</li>
-	</ul>
-
-	<!-- (click)="userAnswer = choise.id" -->
-
-	<!-- check answer -->
-	<button (click)="ex3Verification()" class="check-answer" title="Виконати перевірку">
-		<img src="assets/img/play-icon.png" alt="Перевірити">
-	</button>
-
+  <!-- check answer -->
+  <button (click)="ex3Verification()" class="check-answer" title="Виконати перевірку">
+    <img src="assets/img/play-icon.png" alt="Перевірити">
+  </button>
 </div>
