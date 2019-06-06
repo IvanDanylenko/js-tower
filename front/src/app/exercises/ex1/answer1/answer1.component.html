@@ -1,0 +1,15 @@
+<div class="editor-wrapper">
+  <ace-editor #editor (textChanged)="onChange($event)"
+              [autoUpdateContent]="true"
+              [mode]="'javascript'"
+              [options]="options"
+              [readOnly]="false"
+              [theme]="'iplastic'"
+              [(text)]="detail?.codeEditor[0].text" style="min-height: 93.5vh; width:100%; overflow: auto;">
+  </ace-editor>
+</div>
+
+<!-- check answer -->
+<button (click)="ex1Verification()" class="check-answer" title="Виконати перевірку">
+  <img src="assets/img/play-icon.png" alt="Перевірити">
+</button>

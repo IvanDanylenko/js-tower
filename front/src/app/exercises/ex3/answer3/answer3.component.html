@@ -1,0 +1,12 @@
+<div class="answer">
+  <h4>Виберіть правильну відповідь:</h4>
+
+  <ul class="choises">
+    <li *ngFor="let item of detail?.choises" (click)="onSelect(item)" [class.active] = "item.id == activeItem">{{item.name}}</li>
+  </ul>
+
+  <!-- check answer -->
+  <button (click)="ex3Verification()" class="check-answer" title="Виконати перевірку">
+    <img src="assets/img/play-icon.png" alt="Перевірити">
+  </button>
+</div>

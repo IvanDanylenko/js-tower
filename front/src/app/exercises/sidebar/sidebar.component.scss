@@ -6,7 +6,6 @@
 
 .sidebar-list {
 	li {
-		padding: 16px 5px;
 		cursor: pointer;
 		transition: all .3s ease;
 		position: relative;
@@ -35,6 +34,14 @@
 	}
 	&:hover li:after {
 		opacity: 0;
+	}
+	button {
+		padding: 16px 5px;
+		width: 100%;
+		border: none;
+		background: transparent;
+		outline: none;
+		cursor: pointer;
 	}
 	img {
 		display: block;
@@ -105,6 +112,11 @@
 }
 
 // tasks-settings
-.tasks-settings {
-	display: none;
+.reset-all {
+	padding: 10px 0;
+	color: green;
+	background: transparent;
+	border: none;
+	font-size: 20px;
+	cursor: pointer;
 }

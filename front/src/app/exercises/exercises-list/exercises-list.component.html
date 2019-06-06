@@ -1,45 +1,48 @@
 <section id="exercises" class="exercises">
-	<div class="container">
-		<h1 class="exercises-title">Вправи для вивчення JavaScript</h1>
-		<!-- exercises-list -->
-		<ul class="exercises-list">
+  <div class="container">
+    <h1 class="exercises-title">Вправи для вивчення JavaScript</h1>
+    <!-- exercises-list -->
+    <ul class="exercises-list">
       <!-- ex1 -->
-			<li class="purple">
+      <li class="purple">
         <a routerLink="/exercises/ex1" class="icon-comet">
-					<div class="exercises-list__content">
-						<h2>Тренування кода</h2>
-						<p>Вправа розрахована на опрацювання конструкцій мови на практиці</p>
-					</div>
-					<div class="progress">
-						<span>Прогрес 11/100</span>
-					</div>
+          <div class="exercises-list__content">
+            <h2>Тренуй себе</h2>
+            <p>Вправа розрахована на опрацювання конструкцій мови на практиці</p>
+          </div>
+          <div class="progress">
+            <!-- Progress ex 1 -->
+            <span>Прогрес {{ ex1Current }}/{{ ex1Total }}</span>
+          </div>
         </a>
       </li>
       <!-- ex2 -->
       <li class="blue">
-        <a href="#" class="icon-clever">
+        <a routerLink="/exercises/ex2" class="icon-clever">
           <div class="exercises-list__content">
-						<h2>Визнач результат</h2>
-						<p>Докажи, що можеш зрозуміти як працює будь-який код, яким би хитрим він не був</p>
-					</div>
-					<div class="progress">
-						<span>Прогрес 11/100</span>
-					</div>
+            <h2>Визнач результат</h2>
+            <p>Докажи, що можеш зрозуміти як працює будь-який код, яким би хитрим він не був</p>
+          </div>
+          <div class="progress">
+            <!-- Progress ex 2 -->
+            <span>Прогрес {{ ex2Current }}/{{ ex2Total }}</span>
+          </div>
         </a>
       </li>
       <!-- ex3 -->
       <li class="purple-light">
-        <a href="#" class="icon-around-the-world">
+        <a routerLink="/exercises/ex3" class="icon-around-the-world">
           <div class="exercises-list__content">
-						<h2>Мудрець</h2>
-						<p>Перевір свої теоретичні знання, відповівши на всі поставлені запитання</p>
-					</div>
-					<div class="progress">
-						<span>Прогресс 11/100</span>
-					</div>
+            <h2>Перевір знання</h2>
+            <p>Перевір свої теоретичні знання, відповівши на всі поставлені запитання</p>
+          </div>
+          <div class="progress">
+            <!-- Progress ex 3 -->
+            <span>Прогресс {{ ex3Current }}/{{ ex3Total }}</span>
+          </div>
         </a>
       </li>
-		</ul>
-	</div>
+    </ul>
+  </div>
 </section>
 <app-footer></app-footer>

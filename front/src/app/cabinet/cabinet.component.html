@@ -1,6 +1,20 @@
 <section class="cabinet">
-	<p>
-		cabinet works!
-	</p>
+  <div class="container">
+    <h1>Налаштування</h1>
+    <div class="setting-group">
+      <div class="setting">
+        <button (click)="resetAllProgress()">Обнулити весь прогрес</button>
+      </div>
+      <div class="setting">
+        <button (click)="resetEx1Progress()">Обнулити вправу "Тренуй себе"</button>
+      </div>
+      <div class="setting">
+        <button (click)="resetEx2Progress()">Обнулити вправу "Визнач результат"</button>
+      </div>
+      <div class="setting">
+        <button (click)="resetEx3Progress()">Обнулити вправу "Перевір знання"</button>
+      </div>
+    </div>
+  </div>
 </section>
 <app-footer></app-footer>

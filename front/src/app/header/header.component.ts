@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthenticationService} from '@/_services';
+import { Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,12 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  auth: boolean = false;
+  isCabinet: boolean = false;
 
-	auth: boolean = false;
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor(
+    private router: Router, 
+    private activatedRoute: ActivatedRoute, 
+    private authService: AuthenticationService
+  ) {
+    const auth = localStorage.getItem('currentUser');
+    if(auth) this.auth = true;
   }
 
+  ngOnInit() {
+    if ( this.router.isActive('/cabinet', true) ) {
+      this.isCabinet = true;
+    }
+  }
+
+  onLogout() {
+    this.authService.logout();
+    this.router.navigate(['/']);
+  }
 }

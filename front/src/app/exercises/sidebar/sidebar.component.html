@@ -1,74 +1,31 @@
 <div class="sidebar">
 	<ul class="sidebar-list">
 		<li>
-			<button (click)="show = !show">
+			<button (click)="showTasksList = !showTasksList; showSettings = false" title="Список завдань">
 				<img src="assets/img/task-list.png" alt="">
 			</button>
 		</li>
-		<li><img src="assets/img/task-settings.png" alt=""></li>
+		<li>
+			<button (click)="showSettings = !showSettings; showTasksList = false" title="Налаштування">
+				<img src="assets/img/task-settings.png" alt="">
+			</button>
+		</li>
 	</ul>
 </div>
 <!-- tasks list -->
-<div *ngIf="show" class="tasks-modal tasks-list">
+<div *ngIf="showTasksList" class="tasks-modal tasks-list">
 	<div class="tasks-modal__title">
 		<h4>Список завдань</h4>
-		<a (click)="show = false" class="close">&times;</a>
+		<a (click)="showTasksList = false" class="close" title="Закрити">&times;</a>
 	</div>
 	<div class="tasks-modal__content">
-		<div class="tasks-modal__volume">
-			<h5>Основи JavaScript</h5>
+		<div *ngFor="let level of taskList" class="tasks-modal__volume">
+			<h5>{{level.name}}</h5>
 			<ul>
-				<li>
-					<a href="#">
-						<i>1</i>
-						<strong>Коментарі</strong>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<i>2</i>
-						<strong>Змінні</strong>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<i>3</i>
-						<strong>Завдання 3</strong>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<i>4</i>
-						<strong>Завдання 4</strong>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div class="tasks-modal__volume">
-			<h5>Функції</h5>
-			<ul>
-				<li>
-					<a href="#">
-						<i>5</i>
-						<strong>Завдання 5</strong>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<i>6</i>
-						<strong>Завдання 6</strong>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<i>7</i>
-						<strong>Завдання 7</strong>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<i>8</i>
-						<strong>Завдання 8</strong>
+				<li *ngFor="let task of level.tasks">
+					<a (click)="onTaskSelect(level.id, task.id)">
+						<i>{{task.id}}</i>
+						<strong title="{{task.name}}">{{task.name}}</strong>
 					</a>
 				</li>
 			</ul>
@@ -76,9 +33,12 @@
 	</div>
 </div>
 <!-- tasks settings -->
-<div class="tasks-modal tasks-settings">
+<div *ngIf="showSettings" class="tasks-modal tasks-settings">
 	<div class="tasks-modal__title">
-		<h4>Список завдань</h4>
-		<a href="#" class="close">&times;</a>
+		<h4>Налаштування</h4>
+		<a (click)="showSettings = false" class="close" title="Закрити">&times;</a>
+	</div>
+	<div class="tasks-modal__content">
+		<button (click)="resetAllProgress()" class="reset-all">Обнулити прогрес</button>
 	</div>
 </div>

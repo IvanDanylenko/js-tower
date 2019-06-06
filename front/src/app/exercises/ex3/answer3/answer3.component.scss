@@ -1,0 +1,33 @@
+.answer {
+	padding: 0 20px;
+	justify-content: flex-start;
+	label {
+		margin-bottom: 15px;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+	}
+	.choises {
+		li {
+			padding-left: 40px;
+			margin-bottom: 15px;
+			position: relative;
+			cursor: pointer;
+			&:before {
+				content: '';
+				display: block;
+				width: 10px;
+				height: 10px;
+				border: 1px solid #000;
+				border-radius: 50%;
+				position: absolute;
+				left: 5px;
+				top: 50%;
+				margin-top: -6px;
+			}
+		}
+		.active:before {
+			background: red;
+		}
+	}
+}

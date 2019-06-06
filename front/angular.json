@@ -23,8 +23,17 @@
 						"polyfills": "src/polyfills.ts",
 						"tsConfig": "src/tsconfig.app.json",
 						"assets": ["src/favicon.ico", "src/assets"],
-						"styles": ["src/styles.scss"],
-						"scripts": [],
+						"styles": [
+							"src/styles.scss",
+							"node_modules/ngx-toastr/toastr.css"
+						],
+						"scripts": [
+							"node_modules/ace-builds/src-min/ace.js",
+							"node_modules/ace-builds/src-min/worker-javascript.js",
+							"node_modules/ace-builds/src-min/mode-javascript.js",
+							"node_modules/ace-builds/src-min/theme-iplastic.js",
+							{ "bundleName": "worker-javascript", "input": "node_modules/ace-builds/src-min/worker-javascript.js" }
+						],
 						"es5BrowserSupport": true
 					},
 					"configurations": {
@@ -57,7 +66,8 @@
 				"serve": {
 					"builder": "@angular-devkit/build-angular:dev-server",
 					"options": {
-						"browserTarget": "js-tower:build"
+						"browserTarget": "js-tower:build",
+						"proxyConfig": "src/proxy.conf.json"
 					},
 					"configurations": {
 						"production": {

@@ -1,0 +1,18 @@
+<div class="description">
+  <h1 (click)="showDetail()" class="description__title">
+    {{detail?.name}}
+  </h1>
+  <!-- question [innerHMTL]-->
+  <div [innerHTML] = "detail?.question" class="question-block"></div>
+
+  <div class="editor-wrapper">
+    <ace-editor #editor
+      [mode]="'javascript'"
+      [options]="options"
+      [readOnly]="true"
+      [theme]="'iplastic'"
+      [(text)]="detail?.codeEditor[0].text"
+      style="min-height: 72vh; width:100%; overflow: auto;"
+    ></ace-editor>
+  </div>
+</div>

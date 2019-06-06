@@ -1,0 +1,13 @@
+<section id="ex2" class="exercise">
+	<div class="exercise__content">
+		<div class="column column-left">
+			<app-task3 [detail]="currentExercise"></app-task3>
+		</div>
+		<div class="column column-right">
+			<app-answer3 [detail]="currentExercise" (answerChecked)="onAnswerChecked()"></app-answer3>
+		</div>
+	</div>
+	<div class="sidebar-wrapper">
+		<app-sidebar [taskList]="taskList" (taskChange)="onTaskChange($event)"></app-sidebar>
+	</div>
+</section>
