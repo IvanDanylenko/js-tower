@@ -371,7 +371,7 @@ db.addCollection('ex1').insert([
 		tasks: [
 			{
         id: 23,
-        name: "Завдання",
+        name: "Створення рядка",
         description: ``,
         codeEditor: [{ id: 1, text: `` }],
         challenges: [
@@ -383,7 +383,7 @@ db.addCollection('ex1').insert([
 			},
 			{
         id: 24,
-        name: "Завдання",
+        name: "Конкатенація",
         description: ``,
         codeEditor: [{ id: 1, text: `` }],
         challenges: [
@@ -395,7 +395,7 @@ db.addCollection('ex1').insert([
 			},
 			{
         id: 25,
-        name: "Завдання",
+        name: "Метод indexOf()",
         description: ``,
         codeEditor: [{ id: 1, text: `` }],
         challenges: [
@@ -407,7 +407,7 @@ db.addCollection('ex1').insert([
 			},
 			{
         id: 26,
-        name: "Завдання",
+				name: "Метод indexLastOf()",
         description: ``,
         codeEditor: [{ id: 1, text: `` }],
         challenges: [
@@ -416,10 +416,16 @@ db.addCollection('ex1').insert([
         tests: [
           { id: 1, value: "" }
         ]
-			},
+			}
+		]
+	},
+	{
+		id: 5,
+		name: "Масиви",
+		tasks: [
 			{
         id: 27,
-        name: "Завдання",
+        name: "Об'явлення масиву",
         description: ``,
         codeEditor: [{ id: 1, text: `` }],
         challenges: [
@@ -431,7 +437,7 @@ db.addCollection('ex1').insert([
 			},
 			{
 				id: 28,
-				name: "Завдання",
+				name: "Додавання в масив даних",
 				description: ``,
 				codeEditor: [{ id: 1, text: `` }],
 				challenges: [
@@ -443,7 +449,7 @@ db.addCollection('ex1').insert([
 			},
 			{
 				id: 29,
-				name: "Завдання",
+				name: "Метод push()",
 				description: ``,
 				codeEditor: [{ id: 1, text: `` }],
 				challenges: [
@@ -455,7 +461,7 @@ db.addCollection('ex1').insert([
 			},
 			{
 				id: 30,
-				name: "Завдання",
+				name: "Метод pop()",
 				description: ``,
 				codeEditor: [{ id: 1, text: `` }],
 				challenges: [
@@ -467,7 +473,7 @@ db.addCollection('ex1').insert([
 			},
 			{
 				id: 31,
-				name: "Завдання",
+				name: "Метод shift()",
 				description: ``,
 				codeEditor: [{ id: 1, text: `` }],
 				challenges: [
@@ -479,7 +485,7 @@ db.addCollection('ex1').insert([
 			},
 			{
 				id: 32,
-				name: "Завдання",
+				name: "Метод unshift()",
 				description: ``,
 				codeEditor: [{ id: 1, text: `` }],
 				challenges: [
@@ -488,15 +494,7 @@ db.addCollection('ex1').insert([
 				tests: [
 					{ id: 1, value: "" }
 				]
-			}
-		]
-	},
-	// end level 4 - EX1
-	// level 5
-	{
-		id: 5,
-		name: "Масиви",
-		tasks: [
+			},
 			{
         id: 33,
         name: "Завдання",
@@ -1163,7 +1161,12 @@ console.log(one/zero + one);`
 	}
 ]);
 
-/* Collection for ex3 */
+
+
+
+
+
+/* ===== Collection for ex3 ===== */
 db.addCollection('ex3').insert([
   // level 1 - EX3
   {
@@ -1203,15 +1206,14 @@ db.addCollection('ex3').insert([
       {
         id: 3,
         name: "Завдання 3",
-        question: `<p></p>`,
+        question: `<p>Скільки параметрів можна передати функції?</p>`,
         choises: [
-          { id: 1, name: "Object" },
-          { id: 2, name: "Number" },
-          { id: 3, name: "String" },
-          { id: 4, name: "null" },
-          { id: 5, name: "undefined" }
+          { id: 1, name: "Не більше двадцяти" },
+          { id: 2, name: "Не більше ста" },
+          { id: 3, name: "Обмежену кількість" },
+          { id: 4, name: "Скільки завгодно" }
         ],
-        answer: 2353532
+        answer: 4
       }
       // end task 3
     ]
@@ -1226,30 +1228,25 @@ db.addCollection('ex3').insert([
       {
         id: 4,
         name: "Завдання 4",
-        question: `<p></p>`,
+        question: `<p>Що являє собою метод об'єкта JavaScript?</p>`,
         choises: [
-          { id: 1, name: "Object" },
-          { id: 2, name: "Number" },
-          { id: 3, name: "String" },
-          { id: 4, name: "null" },
-          { id: 5, name: "undefined" }
+          { id: 1, name: "Це іменний ключ в об'єкті" },
+          { id: 2, name: "Це просто функція, що добавлена в асоціативний масив" },
+          { id: 3, name: "Це структура, яка схожа на функцію, але нею не являється" }
         ],
-        answer: 2353532
+        answer: 2
       },
       // end task 4
       // task 5 - EX3
       {
         id: 5,
         name: "Завдання 5",
-        question: `<p></p>`,
+				question: `<p>Яка різниця між функціями FUNCTION(A,B) { return a+b } та var F = FUNCTION(A,B) { return a+b } ?</p>`,
         choises: [
-          { id: 1, name: "Object" },
-          { id: 2, name: "Number" },
-          { id: 3, name: "String" },
-          { id: 4, name: "null" },
-          { id: 5, name: "undefined" }
+          { id: 1, name: "Різниця в області видимості, друга функція доступна лише після місця її об'явлення" },
+          { id: 2, name: "Різниці немає, просто інший синтаксис об'явлення функції" }
         ],
-        answer: 2353532
+        answer: 1
       },
       // end task 5
       // task 6 - EX3
