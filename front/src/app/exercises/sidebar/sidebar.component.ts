@@ -38,4 +38,20 @@ export class SidebarComponent implements OnInit {
 		localStorage.setItem('currentUser', JSON.stringify(currentUser));
 		this.toastr.success("Прогрес вправи успішно оновлено");
 	}
+
+	fontLess() {
+		console.log("Font less");
+	}
+
+	fontMore() {
+		console.log("Font more");
+	}
+
+	fontEditorLess() {
+		console.log("Font editor less");
+	}
+
+	fontEditorMore() {
+		console.log("Font editor less");
+	}
 }

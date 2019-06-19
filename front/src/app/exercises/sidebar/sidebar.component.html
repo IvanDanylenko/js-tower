@@ -39,6 +39,20 @@
 		<a (click)="showSettings = false" class="close" title="Закрити">&times;</a>
 	</div>
 	<div class="tasks-modal__content">
-		<button (click)="resetAllProgress()" class="reset-all">Обнулити прогрес</button>
+		<div class="tasks-modal__volume">
+			<h5>Змінити шрифт тексту</h5>
+			<button (click)="fontLess()" class="font minus">-</button>
+			<button (click)="fontMore()" class="font plus">+</button>
+		</div>
+		<hr>
+		<div class="tasks-modal__volume">
+			<h5>Змінити шрифт редактора</h5>
+			<button (click)="fontEditorLess()" class="font minus">-</button>
+			<button (click)="fontEditorMore()" class="font plus">+</button>
+		</div>
+		<hr>
+		<div class="tasks-modal__volume">
+			<button (click)="resetAllProgress()" class="reset-all">Обнулити прогрес</button>
+		</div>
 	</div>
 </div>

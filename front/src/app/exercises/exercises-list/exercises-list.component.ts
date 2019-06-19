@@ -10,9 +10,9 @@ export class ExercisesListComponent implements OnInit {
 	ex1Current: number;
 	ex2Current: number;
 	ex3Current: number;
-	ex1Total: number = 10;
-	ex2Total: number = 10;
-	ex3Total: number = 10;
+	ex1Total: number = 52;
+	ex2Total: number = 20;
+	ex3Total: number = 40;
 
   constructor(private taskService: TaskService) { }
 
