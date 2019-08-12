@@ -19,3 +19,5 @@ Folder /server contains a REST API server built on Node.js and Express.
 3. Run `npm run all` from folder /front (this command run this project in development mode). 
 
 4. Navigate to `http://localhost:4200`. The app will automatically reload if you change any of the source files.
+
+5. To login please enter login: `test`, password `test`.
